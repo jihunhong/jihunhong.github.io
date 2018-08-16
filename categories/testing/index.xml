@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on harry&#39;s blog</title>
-    <link>https://jihunhong.github.io/post/</link>
-    <description>Recent content in Posts on harry&#39;s blog</description>
+    <title>Testing on harry&#39;s blog</title>
+    <link>https://jihunhong.github.io/categories/testing/</link>
+    <description>Recent content in Testing on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 16 Aug 2018 17:11:27 +0900</lastBuildDate>
     
-	<atom:link href="https://jihunhong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jihunhong.github.io/categories/testing/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -20,15 +20,6 @@
       <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus fringilla dui. Donec laoreet maximus elit. Mauris ullamcorper condimentum lobortis. Donec maximus, mi vitae iaculis placerat, ligula mi maximus lectus, ac varius mi nulla id neque. Quisque porta eros nisi, eu fringilla urna dictum vitae.
 Vestibulum id metus eu nisl sodales consectetur. Phasellus et ultrices lacus.
 Curabitur orci turpis, egestas placerat velit eget, dictum pellentesque ipsum. Suspendisse potenti. Suspendisse ac maximus arcu.</description>
-    </item>
-    
-    <item>
-      <title>첫 포스팅 테스트</title>
-      <link>https://jihunhong.github.io/08/15/%EC%B2%AB-%ED%8F%AC%EC%8A%A4%ED%8C%85-%ED%85%8C%EC%8A%A4%ED%8A%B8/</link>
-      <pubDate>Wed, 15 Aug 2018 23:46:27 +0900</pubDate>
-      
-      <guid>https://jihunhong.github.io/08/15/%EC%B2%AB-%ED%8F%AC%EC%8A%A4%ED%8C%85-%ED%85%8C%EC%8A%A4%ED%8A%B8/</guid>
-      <description> hello, hugo! hugo new posts/첫 포스팅 테스트.md </description>
     </item>
     
   </channel>
