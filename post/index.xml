@@ -20,5 +20,16 @@
       <description> hello, hugo! hugo new posts/첫 포스팅 테스트.md </description>
     </item>
     
+    <item>
+      <title>Lorem Ipsum</title>
+      <link>https://jihunhong.github.io/1/01/lorem-ipsum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jihunhong.github.io/1/01/lorem-ipsum/</guid>
+      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi cursus fringilla dui. Donec laoreet maximus elit. Mauris ullamcorper condimentum lobortis. Donec maximus, mi vitae iaculis placerat, ligula mi maximus lectus, ac varius mi nulla id neque. Quisque porta eros nisi, eu fringilla urna dictum vitae.
+Vestibulum id metus eu nisl sodales consectetur. Phasellus et ultrices lacus.
+Curabitur orci turpis, egestas placerat velit eget, dictum pellentesque ipsum. Suspendisse potenti. Suspendisse ac maximus arcu.</description>
+    </item>
+    
   </channel>
 </rss>
