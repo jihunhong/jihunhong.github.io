@@ -1,0 +1,4 @@
+맨날 까먹는 비교 표현식
+Great Little Equal
+
+<p><strong>G 는 크다.&nbsp; L은 작다. E 는 같다.</strong></p>  <p><strong>eq - equal ( = )</strong><br /> <strong>ne - not equal ( &lt;&gt; )</strong><br /> <strong>lt&nbsp;- little ( &lt; )</strong><br /> <strong>le - little or equal ( &lt;= )</strong><br /> <strong>gt&nbsp;- greater ( &gt; )</strong><br /> <strong>ge - greater or equal ( &gt;= )</strong></p> 
