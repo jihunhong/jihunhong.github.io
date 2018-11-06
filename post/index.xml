@@ -6,10 +6,20 @@
     <description>Recent content in Posts on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Aug 2018 04:52:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 05 Nov 2018 15:22:42 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>독학사 후기</title>
+      <link>https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/</link>
+      <pubDate>Mon, 05 Nov 2018 15:22:42 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/</guid>
+      <description>&lt;p&gt;컴퓨터과학 독학사 4단계 후기
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CountDiv</title>
@@ -18,16 +28,6 @@
       
       <guid>https://jihunhong.github.io/08/24/countdiv/</guid>
       <description>&lt;p&gt;floor() 몫 구하기
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Lorem Ipsum</title>
-      <link>https://jihunhong.github.io/08/16/lorem-ipsum/</link>
-      <pubDate>Thu, 16 Aug 2018 17:11:27 +0900</pubDate>
-      
-      <guid>https://jihunhong.github.io/08/16/lorem-ipsum/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris ullamcorper condimentum lobortis. Donec maximus, mi vitae iaculis placerat, maximus lectus, ac varius mi nulla id neque.
 &lt;/p&gt;</description>
     </item>
     
@@ -109,23 +109,6 @@
       <guid>https://jihunhong.github.io/03/14/json%EC%9D%84-%EB%8B%A4%EB%A3%A8%EB%A9%B4%EC%84%9C-%EA%B2%AA%EC%97%88%EB%8D%98-%EC%8B%A4%EC%88%98/</guid>
       <description>&lt;p&gt;JSONARRAY로 리턴된 검색결과를 다룰때 한 실수
 &lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://jihunhong.github.io/01/01/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jihunhong.github.io/01/01/</guid>
-      <description>�ǳ� ���Դ� ���� ǥ����Great Little EqualG �� ũ��.&amp;nbsp; L�� �۴�. E �� ����.
-eq - equal ( = )
-ne - not equal ( &amp;lt;&amp;gt; )
-lt&amp;nbsp;- little ( &amp;lt; )
-le - little or equal ( &amp;lt;= )
-gt&amp;nbsp;- greater ( &amp;gt; )
-ge - greater or equal ( &amp;gt;= )
-JSON�� �ٷ��鼭 �޾��� �Ǽ�JSONARRAY�� ���ϵ� �˻������� �ٷ� �������ο�&amp;nbsp;������Ʈ�� �����ϸ鼭
-API�� �ٷ���&amp;nbsp;��������Ʈ�� �����ϴ� �� ������ ��Ȳ�� �����ߴ�.</description>
     </item>
     
   </channel>

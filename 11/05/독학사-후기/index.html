@@ -22,25 +22,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.46 with theme Tranquilpeak 0.4.3-BETA">
-    <title>CountDiv</title>
+    <title>독학사 후기</title>
     <meta name="author" content="JIHOON HONG">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="tech">
 
     <link rel="icon" href="https://jihunhong.github.io/favicon.png">
     
 
     
-    <meta name="description" content="floor() 몫 구하기
+    <meta name="description" content="컴퓨터과학 독학사 4단계 후기
 ">
-    <meta property="og:description" content="floor() 몫 구하기
+    <meta property="og:description" content="컴퓨터과학 독학사 4단계 후기
 ">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CountDiv">
-    <meta property="og:url" content="/08/24/countdiv/">
+    <meta property="og:title" content="독학사 후기">
+    <meta property="og:url" content="/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/">
     <meta property="og:site_name" content="harry&#39;s blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="harry&#39;s blog">
-    <meta name="twitter:description" content="floor() 몫 구하기
+    <meta name="twitter:description" content="컴퓨터과학 독학사 4단계 후기
 ">
     
     
@@ -53,7 +53,7 @@
     
 
     
-      <meta property="og:image" content="https://logopond.com/logos/0c04b7ed5cc6adfe2c28416f3204930d.png">
+      <meta property="og:image" content="https://post-phinf.pstatic.net/MjAxNzA5MTNfMTA3/MDAxNTA1Mjg5OTI1NjI2.Y_fUVCePlNlpsbXqUACpAIqm2TtsoT8ndj367sMpV_8g.0WsAxxcNDPlaiuhpYnt1REgw89w_bePT63frebPp-Bkg.PNG/3.png?type=w1200">
     
     
     
@@ -216,15 +216,15 @@
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      CountDiv
+      독학사 후기
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-08-24T04:52:14&#43;09:00">
+      <time itemprop="datePublished" datetime="2018-11-05T15:22:42&#43;09:00">
         
-  August 24, 2018
+  November 5, 2018
 
       </time>
     
@@ -243,54 +243,83 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>floor() 몫 구하기
+              <p>컴퓨터과학 독학사 4단계 후기
 </p>
 
-<h1 id="countdiv-50-http-abh0518-net-tok-p-560"><a href="http://abh0518.net/tok/?p=560">CountDiv (50%) </a></h1>
+<h1 id="독학사-후기">독학사 후기</h1>
 
-<pre><code class="language-java">class Solution {
-    public int solution(int A, int B, int K) {
-        int count=0;
+<p>8월 말 이후로 포스팅이 없었는데 독학사 시험 준비하느라</p>
 
-        for(int i=A; i&lt;=B; i++){
-            if(i % K == 0){
-                count++;
-            }
-        }
-        return count;
-    }
-}
-</code></pre>
+<p>개발, 알고리즘 관련 포스팅을 못했다.</p>
 
-<p>문제를 간단히 요약해보자면<br />
-A와 B 두 정수 사이에 K로 나누어 떨어지는 숫자의 갯수를 구하는 문제였다.</p>
+<p>현재는 시험을 무사히 치르고 결과가 나오길 기다리고 있는데</p>
 
-<p>worst-case time이 O(1) 으로 되어있어서<br />
-처음에는 너무 어렵게 생각한것같다.</p>
+<p>2달간 시험준비를 하면서 느낀점은 시험관련 정보가 너무 부족했다.
+(기출문제나 비중 뭐 이런것들?)</p>
 
-<p>지금봐도 말도안되는 방식으로 알고리즘을 짰는데<br />
-시간 다 쓰더라도 좀더 신경써서 풀어봐야겠다.</p>
+<p>그래서 준비하는 분들께 조금이라도 도움이 되고자 후기를 남겨본다.</p>
 
-<pre><code class="language-java">class Solution {
-    public int solution(int A, int B, int K) {
-        // write your code in Java SE 8
-        int result = B/K + 1;
-        if(A != 0){
-            result -= ((A-1)/K + 1);
-        }
-        return result;
-    }
-}
-</code></pre>
+<hr />
 
-<p>풀이과정은 정말 간단하게 풀수있었다.</p>
+<p>&lsquo;독학사&rsquo;를 모르는 사람이 많을것같아 적어보자면</p>
 
-<p>문제를 다시한번 생각해보면 결국 0에서 B까지 K로 나누어 떨어지는 갯수에서<br />
-0부터 A까지의 갯수를 뺀다고 생각하면되지만,</p>
+<p>쉽게말해 학사학위를 딸수있는 국가 검정 시험이다.</p>
 
-<p>0에서 B까지의 과정을 생각해볼때 0과 A가 포함되어있다.<br />
-그러므로  A!=0에서 result의 값에 포함되는 0과 A값을 빼주기 위해
-if문과 연산을 넣은 알고리즘이다.</p>
+<p>독학사 시험은 1년에 4단계의 시험이 있고 각 단계를 차례로 모두 통과해야</p>
+
+<p>학사 학위를 취득하게 된다.</p>
+
+<p>내 경우에는 3년제 전문대를 졸업했기때문에 3단계 까지의 시험이 면제되고</p>
+
+<p>4단계만 통과하면 학사학위를 얻을수 있는것.</p>
+
+<p>4단계 시험은 총 6과목으로 구성되고</p>
+
+<p>난 교양과목인 국어, 영어 전공과목 컴퓨터시스템구조, 네트워크, 자료구조, 운영체제 시험을 치뤘는데</p>
+
+<p>결과적으로는 생각보다 굉장히 쉽기도 했고, 어렵기도 했다.</p>
+
+<p>독학사 시험은 기출문제도 없고, 내가 응시한 컴퓨터 과학의 경우 응시자수가 적은 학과라</p>
+
+<p>정보량이 너무 부족했다.</p>
+
+<p>책은 교양 전공 할것없이 전부 iMBC 책을 구입해서 완독, 문제풀이만 반복했다.</p>
+
+<p>독학사 시험의 문제들은 기본적이고 핵심적인 개념에 대해서 정확히 아는것을 물어보는 문제가 많은데 책에서는 비중이 적게있거나 짧게 설명 되있는것 들이 많았다.</p>
+
+<p>그렇기에 지엽적이라고 느껴지는 문제들도 많지만</p>
+
+<p>예를들자면 ~~의 내용이 아닌것은? 하고 4개의 보기중 아닌것을 고르는 문제나</p>
+
+<p>핵심 키워드를 나열하고, 그것이 무엇인가? 같은 문제들이 점수따기 좋다.</p>
+
+<p><strong>주관식에 경우에도 똑같이 적용되는데 자료구조는 트리 순회, XOR 계산 네트워크는 CRC 계산, 계층별 내용들 같은것들이 기억이 난다.</strong></p>
+
+<p>사실 처음 공부를 시작할때는 모든 내용들을 암기하려는 생각에 부담을 많이 가졌는데</p>
+
+<p>이럴 필요없다 일부 문제들은 지엽적인 부분이 있는것은 사실이지만</p>
+
+<p>독학사 시험은 다맞을 필요도없고 일정점수만 넘긴다면 상대평가이기 때문에</p>
+
+<p>모든 내용을 암기한다는 생각으로 공부하는건 좋지않다.</p>
+
+<p>주관식의 경우 많은 문제들이 보기를 주고 빈칸 채우는것들도 있다.</p>
+
+<p>~~개념을 서술하시오. 이런식의 문제가 나오면 어쩌나 했었는데</p>
+
+<p>그 정도 난이도의 문제는 안나온다. 너무 걱정 마시길 :)</p>
+
+<hr />
+
+<p>내 시험 결과를 적어보자면</p>
+
+<p>교양은 잘봤는데 전공시험들은 응시자수가 적어서 답 맞춰보기도 어렵기 때문에 점수 예상이 잘 안된다.</p>
+
+<p>예상 못한 문제들도 기억나고 :(</p>
+
+<p>결과는 11월 27일에 나오는데 꼭 합격했으면 좋겠다.</p>
+
+<hr />
               
             </div>
           </div>
@@ -302,9 +331,7 @@ if문과 연산을 넣은 알고리즘이다.</p>
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/algorithm/">Algorithm</a>
-
-  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/codility/">codility</a>
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/%ED%9B%84%EA%B8%B0/">후기</a>
 
                   </div>
                 
@@ -317,7 +344,7 @@ if문과 연산을 넣은 알고리즘이다.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/" data-tooltip="독학사 후기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -325,7 +352,7 @@ if문과 연산을 넣은 알고리즘이다.</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/23/maxcounters/" data-tooltip="MaxCounters">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/08/24/countdiv/" data-tooltip="CountDiv">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -343,19 +370,19 @@ if문과 연산을 넣은 알고리즘이다.</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/08/24/countdiv/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/08/24/countdiv/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/08/24/countdiv/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -403,7 +430,7 @@ if문과 연산을 넣은 알고리즘이다.</p>
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/" data-tooltip="독학사 후기">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -411,7 +438,7 @@ if문과 연산을 넣은 알고리즘이다.</p>
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/23/maxcounters/" data-tooltip="MaxCounters">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/08/24/countdiv/" data-tooltip="CountDiv">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -429,19 +456,19 @@ if문과 연산을 넣은 알고리즘이다.</p>
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/08/24/countdiv/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/08/24/countdiv/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/08/24/countdiv/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -471,19 +498,19 @@ if문과 연산을 넣은 알고리즘이다.</p>
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F08%2F24%2Fcountdiv%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F11%2F05%2F%25EB%258F%2585%25ED%2595%2599%25EC%2582%25AC-%25ED%259B%2584%25EA%25B8%25B0%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F08%2F24%2Fcountdiv%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F11%2F05%2F%25EB%258F%2585%25ED%2595%2599%25EC%2582%25AC-%25ED%259B%2584%25EA%25B8%25B0%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F08%2F24%2Fcountdiv%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F11%2F05%2F%25EB%258F%2585%25ED%2595%2599%25EC%2582%25AC-%25ED%259B%2584%25EA%25B8%25B0%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -771,9 +798,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/jihunhong.github.io\/08\/24\/countdiv\/';
+          this.page.url = 'https:\/\/jihunhong.github.io\/11\/05\/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0\/';
           
-            this.page.identifier = '\/08\/24\/countdiv\/'
+            this.page.identifier = '\/11\/05\/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0\/'
           
         };
         (function() {
