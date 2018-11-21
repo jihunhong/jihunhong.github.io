@@ -1,9 +1,5 @@
 
 
-  
-    
-  
-
 
   
 
@@ -22,26 +18,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.46 with theme Tranquilpeak 0.4.3-BETA">
-    <title>CountDiv</title>
+    <title>개발후기</title>
     <meta name="author" content="JIHOON HONG">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://jihunhong.github.io/favicon.png">
     
+      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jihunhong.github.io/categories/%EA%B0%9C%EB%B0%9C%ED%9B%84%EA%B8%B0/index.xml">
+    
 
     
-    <meta name="description" content="floor() 몫 구하기
-">
-    <meta property="og:description" content="floor() 몫 구하기
-">
+    <meta name="description" content="harry&#39;s blog">
+    <meta property="og:description" content="harry&#39;s blog">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="CountDiv">
-    <meta property="og:url" content="/08/24/countdiv/">
+    <meta property="og:title" content="개발후기">
+    <meta property="og:url" content="/categories/%EA%B0%9C%EB%B0%9C%ED%9B%84%EA%B8%B0/">
     <meta property="og:site_name" content="harry&#39;s blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="harry&#39;s blog">
-    <meta name="twitter:description" content="floor() 몫 구하기
-">
+    <meta name="twitter:description" content="harry&#39;s blog">
     
     
 
@@ -52,8 +47,6 @@
       <meta property="og:image" content="//www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
     
 
-    
-      <meta property="og:image" content="https://logopond.com/logos/0c04b7ed5cc6adfe2c28416f3204930d.png">
     
     
     
@@ -222,26 +215,40 @@ if (!doNotTrack) {
 </nav>
 
       
+        
 
+      
       <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-          
-          
-            <div class="post-header main-content-wrap text-left">
+        
+          <section class="postShorten-group main-content-wrap">
+            
+            
+              
   
-    <h1 class="post-title" itemprop="headline">
-      CountDiv
-    </h1>
+    
   
+
+
   
+
+<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
+  <div class="postShorten-wrap">
+    
+    <div class="postShorten-header">
+      <h1 class="postShorten-title" itemprop="headline">
+        <a class="link-unstyled" href="https://jihunhong.github.io/11/22/dunpic.net-%EA%B0%9C%EB%B0%9C%EA%B8%B0/">
+          DUNPIC.NET 개발기
+        </a>
+      </h1>
+      
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-08-24T04:52:14&#43;09:00">
+      <time itemprop="datePublished" datetime="2018-11-22T03:31:11&#43;09:00">
         
-  August 24, 2018
+  November 22, 2018
 
       </time>
     
@@ -250,161 +257,37 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>
+      <a class="category-link" href="https://jihunhong.github.io/categories/%ea%b0%9c%eb%b0%9c%ed%9b%84%ea%b8%b0">개발후기</a>
     
   
 
   </div>
 
-</div>
-          
-          <div class="post-content markdown" itemprop="articleBody">
-            <div class="main-content-wrap">
-              <p>floor() 몫 구하기
+    </div>
+    
+    <div class="postShorten-excerpt" itemprop="articleBody" style="    margin-top: 3px;">
+      <p>네오플 오픈 API를 이용한 프로젝트
 </p>
-
-<h1 id="countdiv-50-http-abh0518-net-tok-p-560"><a href="http://abh0518.net/tok/?p=560">CountDiv (50%) </a></h1>
-
-<pre><code class="language-java">class Solution {
-    public int solution(int A, int B, int K) {
-        int count=0;
-
-        for(int i=A; i&lt;=B; i++){
-            if(i % K == 0){
-                count++;
-            }
-        }
-        return count;
-    }
-}
-</code></pre>
-
-<p>문제를 간단히 요약해보자면<br />
-A와 B 두 정수 사이에 K로 나누어 떨어지는 숫자의 갯수를 구하는 문제였다.</p>
-
-<p>worst-case time이 O(1) 으로 되어있어서<br />
-처음에는 너무 어렵게 생각한것같다.</p>
-
-<p>지금봐도 말도안되는 방식으로 알고리즘을 짰는데<br />
-시간 다 쓰더라도 좀더 신경써서 풀어봐야겠다.</p>
-
-<pre><code class="language-java">class Solution {
-    public int solution(int A, int B, int K) {
-        // write your code in Java SE 8
-        int result = B/K + 1;
-        if(A != 0){
-            result -= ((A-1)/K + 1);
-        }
-        return result;
-    }
-}
-</code></pre>
-
-<p>풀이과정은 정말 간단하게 풀수있었다.</p>
-
-<p>문제를 다시한번 생각해보면 결국 0에서 B까지 K로 나누어 떨어지는 갯수에서<br />
-0부터 A까지의 갯수를 뺀다고 생각하면되지만,</p>
-
-<p>0에서 B까지의 과정을 생각해볼때 0과 A가 포함되어있다.<br />
-그러므로  A!=0에서 result의 값에 포함되는 0과 A값을 빼주기 위해
-if문과 연산을 넣은 알고리즘이다.</p>
-              
-            </div>
-          </div>
-          <div id="post-footer" class="post-footer main-content-wrap">
-            
-              
-                
-                
-                  <div class="post-footer-tags">
-                    <span class="text-color-light text-small">TAGGED IN</span><br/>
-                    
-  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/algorithm/">Algorithm</a>
-
-  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/codility/">codility</a>
-
-                  </div>
-                
-              
-            
-            
-  <div class="post-actions-wrap">
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/" data-tooltip="독학사 후기">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/23/maxcounters/" data-tooltip="MaxCounters">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
+      <p>
+        <a href="https://jihunhong.github.io/11/22/dunpic.net-%EA%B0%9C%EB%B0%9C%EA%B8%B0/" class="postShorten-excerpt_link link">Continue reading</a>
         
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/08/24/countdiv/">
-              <i class="fa fa-facebook-official"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/08/24/countdiv/">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/08/24/countdiv/">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        
-      
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
-      
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
-    </ul>
+      </p>
+    </div>
   </div>
-
+  
+    <a href="https://jihunhong.github.io/11/22/dunpic.net-%EA%B0%9C%EB%B0%9C%EA%B8%B0/">
+      <div class="postShorten-thumbnailimg">
+        <img alt="" itemprop="image" src="https://images.unsplash.com/photo-1529603992250-a55acb77d146?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=3d26ed5fbb5c912a5745a30e66abf739&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80" style="border:1px solid #dadada; border-radius: 5px; "/>
+      </div>
+    </a>
+  
+</article>
 
             
-              
-                <div id="disqus_thread">
-  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-              
             
-          </div>
-        </article>
+
+          </section>
+        
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2018 JIHOON HONG. All Rights Reserved
@@ -412,102 +295,6 @@ if문과 연산을 넣은 알고리즘이다.</p>
 </footer>
 
       </div>
-      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
-        
-  <div class="post-actions-wrap">
-      <nav >
-        <ul class="post-actions post-action-nav">
-          
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/" data-tooltip="독학사 후기">
-              
-                  <i class="fa fa-angle-left"></i>
-                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
-                </a>
-            </li>
-            <li class="post-action">
-              
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/23/maxcounters/" data-tooltip="MaxCounters">
-              
-                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
-                  <i class="fa fa-angle-right"></i>
-                </a>
-            </li>
-          
-        </ul>
-      </nav>
-    <ul class="post-actions post-action-share" >
-      
-        <li class="post-action hide-lg hide-md hide-sm">
-          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
-            <i class="fa fa-share-alt"></i>
-          </a>
-        </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/08/24/countdiv/">
-              <i class="fa fa-facebook-official"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/08/24/countdiv/">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-        
-          <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/08/24/countdiv/">
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-        
-      
-      
-        <li class="post-action">
-          <a class="post-action-btn btn btn--default" href="#disqus_thread">
-            <i class="fa fa-comment-o"></i>
-          </a>
-        </li>
-      
-      <li class="post-action">
-        
-          <a class="post-action-btn btn btn--default" href="#">
-        
-          <i class="fa fa-list"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-
-
-      </div>
-      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
-  <i id="btn-close-shareoptions" class="fa fa-close"></i>
-  <ul class="share-options">
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F08%2F24%2Fcountdiv%2F">
-          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
-        </a>
-      </li>
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F08%2F24%2Fcountdiv%2F">
-          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
-        </a>
-      </li>
-    
-      <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F08%2F24%2Fcountdiv%2F">
-          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -783,32 +570,6 @@ $(document).ready(function() {
 });
 </script>
 
-
-  
-    
-      <script>
-        var disqus_config = function () {
-          this.page.url = 'https:\/\/jihunhong.github.io\/08\/24\/countdiv\/';
-          
-            this.page.identifier = '\/08\/24\/countdiv\/'
-          
-        };
-        (function() {
-          
-          
-          if (window.location.hostname == "localhost") {
-            return;
-          }
-          var d = document, s = d.createElement('script');
-          var disqus_shortname = 'harrys-blog-1';
-          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-        })();
-      </script>
-    
-  
 
 
 

@@ -6,10 +6,20 @@
     <description>Recent content in Posts on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 05 Nov 2018 15:22:42 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 03:31:11 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DUNPIC.NET 개발기</title>
+      <link>https://jihunhong.github.io/11/22/dunpic.net-%EA%B0%9C%EB%B0%9C%EA%B8%B0/</link>
+      <pubDate>Thu, 22 Nov 2018 03:31:11 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/11/22/dunpic.net-%EA%B0%9C%EB%B0%9C%EA%B8%B0/</guid>
+      <description>&lt;p&gt;네오플 오픈 API를 이용한 프로젝트
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>독학사 후기</title>
