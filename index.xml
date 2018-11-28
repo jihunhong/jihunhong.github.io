@@ -6,10 +6,20 @@
     <description>Recent content on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 22 Nov 2018 03:31:11 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Nov 2018 18:08:12 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>독학사 후기</title>
+      <link>https://jihunhong.github.io/11/27/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/</link>
+      <pubDate>Tue, 27 Nov 2018 18:08:12 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/11/27/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/</guid>
+      <description>&lt;p&gt;컴퓨터과학 독학사 4단계 후기
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>DUNPIC.NET 개발기</title>
@@ -18,16 +28,6 @@
       
       <guid>https://jihunhong.github.io/11/22/dunpic.net-%EA%B0%9C%EB%B0%9C%EA%B8%B0/</guid>
       <description>&lt;p&gt;네오플 오픈 API를 이용한 프로젝트
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>독학사 후기</title>
-      <link>https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/</link>
-      <pubDate>Mon, 05 Nov 2018 15:22:42 +0900</pubDate>
-      
-      <guid>https://jihunhong.github.io/11/05/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/</guid>
-      <description>&lt;p&gt;컴퓨터과학 독학사 4단계 후기
 &lt;/p&gt;</description>
     </item>
     
@@ -119,6 +119,23 @@
       <guid>https://jihunhong.github.io/03/14/json%EC%9D%84-%EB%8B%A4%EB%A3%A8%EB%A9%B4%EC%84%9C-%EA%B2%AA%EC%97%88%EB%8D%98-%EC%8B%A4%EC%88%98/</guid>
       <description>&lt;p&gt;JSONARRAY로 리턴된 검색결과를 다룰때 한 실수
 &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jihunhong.github.io/01/01/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jihunhong.github.io/01/01/</guid>
+      <description>컴퓨터과학과 독학학위제 합격 후기 독학사 시험 결과가 합격으로 나와 지난번 썼던 독학사 후기를 다시 읽어보는데
+내용이 마음에 안들어 합격후기로 다시 써보려고 한다.
+먼저, 독학사 후기를 적게된 이유는 독학사 준비 기간동안
+6개의 과목을 공부했는데 힘들때마다 합격후기를 읽으며 마음을 다시 잡을수 있게 해주던
+선배님들처럼 나도 후기를 적어보고싶었다.
+사실 합격발표전에는
+독학사를 준비하는 분들께 조금이라도 도움을 주고 싶다는 마음이 있었지만
+결과확신을 나도 못하던때라 조심스러운 마음에 정보에 대한 내용보다는 후기에 가까운 글을 썼었다.
+다행히 바로 어제인 11월 26일 합격 소식을 확인했고, 이전 글 보다는 덜 부담스러운 마음가짐으로 글을 써보려고 한다.</description>
     </item>
     
   </channel>
