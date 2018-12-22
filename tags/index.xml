@@ -6,7 +6,7 @@
     <description>Recent content in Tags on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Aug 2018 04:52:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 06:25:32 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Algorithm</title>
       <link>https://jihunhong.github.io/tags/algorithm/</link>
-      <pubDate>Fri, 24 Aug 2018 04:52:14 +0900</pubDate>
+      <pubDate>Sun, 23 Dec 2018 06:25:32 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/tags/algorithm/</guid>
       <description></description>
@@ -39,11 +39,29 @@
     </item>
     
     <item>
+      <title>Hacker Rank</title>
+      <link>https://jihunhong.github.io/tags/hacker-rank/</link>
+      <pubDate>Sun, 23 Dec 2018 06:25:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/hacker-rank/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Json</title>
       <link>https://jihunhong.github.io/tags/json/</link>
       <pubDate>Wed, 14 Mar 2018 03:12:10 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Picking Numbers</title>
+      <link>https://jihunhong.github.io/tags/picking-numbers/</link>
+      <pubDate>Sun, 23 Dec 2018 06:25:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/picking-numbers/</guid>
       <description></description>
     </item>
     

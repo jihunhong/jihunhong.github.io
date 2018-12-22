@@ -6,10 +6,20 @@
     <description>Recent content in Algorithm on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Aug 2018 04:52:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Dec 2018 06:25:32 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/tags/algorithm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Picking Numbers</title>
+      <link>https://jihunhong.github.io/12/23/picking-numbers/</link>
+      <pubDate>Sun, 23 Dec 2018 06:25:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/12/23/picking-numbers/</guid>
+      <description>&lt;p&gt;값 갱신을 이용한 문제풀이
+&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>CountDiv</title>
