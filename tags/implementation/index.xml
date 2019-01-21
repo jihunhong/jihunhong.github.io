@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hacker Rank on harry&#39;s blog</title>
-    <link>https://jihunhong.github.io/tags/hacker-rank/</link>
-    <description>Recent content in Hacker Rank on harry&#39;s blog</description>
+    <title>Implementation on harry&#39;s blog</title>
+    <link>https://jihunhong.github.io/tags/implementation/</link>
+    <description>Recent content in Implementation on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 22 Jan 2019 07:32:11 +0900</lastBuildDate>
     
-	<atom:link href="https://jihunhong.github.io/tags/hacker-rank/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jihunhong.github.io/tags/implementation/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -18,16 +18,6 @@
       
       <guid>https://jihunhong.github.io/01/22/organizing-containers-of-balls/</guid>
       <description>&lt;p&gt;해커랭크 문제 풀이
-&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Picking Numbers</title>
-      <link>https://jihunhong.github.io/12/23/picking-numbers/</link>
-      <pubDate>Sun, 23 Dec 2018 06:25:32 +0900</pubDate>
-      
-      <guid>https://jihunhong.github.io/12/23/picking-numbers/</guid>
-      <description>&lt;p&gt;값 갱신을 이용한 문제풀이
 &lt;/p&gt;</description>
     </item>
     
