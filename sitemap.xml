@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jihunhong.github.io/02/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%82%BD%EC%A7%88%EA%B8%B0/</loc>
+    <lastmod>2019-02-21T05:49:32+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jihunhong.github.io/01/22/organizing-containers-of-balls/</loc>
     <lastmod>2019-01-22T07:32:11+09:00</lastmod>
   </url>
@@ -96,6 +101,12 @@
   </url>
   
   <url>
+    <loc>https://jihunhong.github.io/tags/db/</loc>
+    <lastmod>2019-02-21T05:49:32+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jihunhong.github.io/tags/hacker-rank/</loc>
     <lastmod>2019-01-22T07:32:11+09:00</lastmod>
     <priority>0</priority>
@@ -104,6 +115,12 @@
   <url>
     <loc>https://jihunhong.github.io/tags/implementation/</loc>
     <lastmod>2019-01-22T07:32:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/tags/jpa/</loc>
+    <lastmod>2019-02-21T05:49:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -133,7 +150,7 @@
   
   <url>
     <loc>https://jihunhong.github.io/post/</loc>
-    <lastmod>2019-01-22T07:32:11+09:00</lastmod>
+    <lastmod>2019-02-21T05:49:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -145,7 +162,7 @@
   
   <url>
     <loc>https://jihunhong.github.io/categories/study/</loc>
-    <lastmod>2019-01-22T07:32:11+09:00</lastmod>
+    <lastmod>2019-02-21T05:49:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -157,13 +174,13 @@
   
   <url>
     <loc>https://jihunhong.github.io/</loc>
-    <lastmod>2019-01-22T07:32:11+09:00</lastmod>
+    <lastmod>2019-02-21T05:49:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jihunhong.github.io/tags/%EA%B0%9C%EB%B0%9C%EA%B8%B0/</loc>
-    <lastmod>2018-11-22T03:31:11+09:00</lastmod>
+    <lastmod>2019-02-21T05:49:32+09:00</lastmod>
     <priority>0</priority>
   </url>
   
