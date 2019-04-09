@@ -6,10 +6,21 @@
     <description>Recent content in Posts on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 21 Feb 2019 05:49:32 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Apr 2019 01:03:21 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>취업을 했다</title>
+      <link>https://jihunhong.github.io/04/09/%EC%B7%A8%EC%97%85%EC%9D%84-%ED%96%88%EB%8B%A4/</link>
+      <pubDate>Tue, 09 Apr 2019 01:03:21 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/09/%EC%B7%A8%EC%97%85%EC%9D%84-%ED%96%88%EB%8B%A4/</guid>
+      <description>&lt;p&gt;취업 후기
+
+&lt;br&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>데이터베이스 삽질기</title>
@@ -147,8 +158,7 @@
       <pubDate>Wed, 14 Mar 2018 03:12:10 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/03/14/json%EC%9D%84-%EB%8B%A4%EB%A3%A8%EB%A9%B4%EC%84%9C-%EA%B2%AA%EC%97%88%EB%8D%98-%EC%8B%A4%EC%88%98/</guid>
-      <description>&lt;p&gt;JSONARRAY로 리턴된 검색결과를 다룰때 한 실수
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;JSONARRAY로 리턴된 검색결과를 다룰때 한 실수&lt;/p&gt;</description>
     </item>
     
   </channel>
