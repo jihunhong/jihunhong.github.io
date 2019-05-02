@@ -6,35 +6,43 @@
     <description>Recent content in Categories on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Apr 2019 09:00:11 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>JS</title>
-      <link>https://jihunhong.github.io/categories/js/</link>
-      <pubDate>Fri, 26 Apr 2019 09:00:11 +0900</pubDate>
+      <title>Java</title>
+      <link>https://jihunhong.github.io/categories/java/</link>
+      <pubDate>Thu, 02 May 2019 00:17:42 +0900</pubDate>
       
-      <guid>https://jihunhong.github.io/categories/js/</guid>
+      <guid>https://jihunhong.github.io/categories/java/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>후기</title>
-      <link>https://jihunhong.github.io/categories/%ED%9B%84%EA%B8%B0/</link>
-      <pubDate>Tue, 09 Apr 2019 01:03:21 +0900</pubDate>
+      <title>Memo</title>
+      <link>https://jihunhong.github.io/categories/memo/</link>
+      <pubDate>Sat, 07 Apr 2018 06:03:58 +0900</pubDate>
       
-      <guid>https://jihunhong.github.io/categories/%ED%9B%84%EA%B8%B0/</guid>
+      <guid>https://jihunhong.github.io/categories/memo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Study</title>
       <link>https://jihunhong.github.io/categories/study/</link>
-      <pubDate>Thu, 21 Feb 2019 05:49:32 +0900</pubDate>
+      <pubDate>Thu, 02 May 2019 00:17:42 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/categories/study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Til</title>
+      <link>https://jihunhong.github.io/categories/til/</link>
+      <pubDate>Thu, 02 May 2019 00:17:42 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/categories/til/</guid>
       <description></description>
     </item>
     
@@ -48,11 +56,11 @@
     </item>
     
     <item>
-      <title>Memo</title>
-      <link>https://jihunhong.github.io/categories/memo/</link>
-      <pubDate>Sat, 07 Apr 2018 06:03:58 +0900</pubDate>
+      <title>후기</title>
+      <link>https://jihunhong.github.io/categories/%ED%9B%84%EA%B8%B0/</link>
+      <pubDate>Tue, 09 Apr 2019 01:03:21 +0900</pubDate>
       
-      <guid>https://jihunhong.github.io/categories/memo/</guid>
+      <guid>https://jihunhong.github.io/categories/%ED%9B%84%EA%B8%B0/</guid>
       <description></description>
     </item>
     

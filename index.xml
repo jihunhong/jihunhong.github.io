@@ -6,18 +6,129 @@
     <description>Recent content on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Apr 2019 09:00:11 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 May 2019 00:17:42 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>자바 스크립트</title>
-      <link>https://jihunhong.github.io/04/26/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/</link>
-      <pubDate>Fri, 26 Apr 2019 09:00:11 +0900</pubDate>
+      <title>멀티스레드 채팅 프로그래밍</title>
+      <link>https://jihunhong.github.io/05/02/%EB%A9%80%ED%8B%B0%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%B1%84%ED%8C%85-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <pubDate>Thu, 02 May 2019 00:17:42 +0900</pubDate>
       
-      <guid>https://jihunhong.github.io/04/26/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8/</guid>
-      <description>&lt;p&gt;자바 스크립트 1장 정리.&lt;/p&gt;</description>
+      <guid>https://jihunhong.github.io/05/02/%EB%A9%80%ED%8B%B0%EC%8A%A4%EB%A0%88%EB%93%9C-%EC%B1%84%ED%8C%85-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <description>&lt;p&gt;✉️ 채팅 프로그래밍
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>멀티 스레드 프로그래밍</title>
+      <link>https://jihunhong.github.io/05/01/%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <pubDate>Wed, 01 May 2019 23:42:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/01/%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <description>&lt;p&gt;멀티 스레드 프로그래밍
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Maven</title>
+      <link>https://jihunhong.github.io/05/01/maven/</link>
+      <pubDate>Wed, 01 May 2019 20:44:24 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/01/maven/</guid>
+      <description>&lt;p&gt;🐦Maven
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>자바 스크립트 - 객체</title>
+      <link>https://jihunhong.github.io/04/30/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8---%EA%B0%9D%EC%B2%B4/</link>
+      <pubDate>Tue, 30 Apr 2019 23:46:17 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/30/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8---%EA%B0%9D%EC%B2%B4/</guid>
+      <description>&lt;p&gt;6장 객체
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>TCP 소켓 프로그래밍</title>
+      <link>https://jihunhong.github.io/04/30/tcp-%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <pubDate>Tue, 30 Apr 2019 23:42:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/30/tcp-%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <description>&lt;p&gt;🌏 TCP 소켓 프로그래밍
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>자바 스크립트 - 표현식과 연산자</title>
+      <link>https://jihunhong.github.io/04/29/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8---%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/</link>
+      <pubDate>Mon, 29 Apr 2019 21:31:48 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/29/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8---%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/</guid>
+      <description>&lt;p&gt;📝 표현식과 연산자
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>InetAddress 클래스</title>
+      <link>https://jihunhong.github.io/04/28/inetaddress-%ED%81%B4%EB%9E%98%EC%8A%A4/</link>
+      <pubDate>Sun, 28 Apr 2019 21:14:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/28/inetaddress-%ED%81%B4%EB%9E%98%EC%8A%A4/</guid>
+      <description>&lt;p&gt;🌏 네트워크와 소켓 이해
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>InputStream 과 OutputStream</title>
+      <link>https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/</link>
+      <pubDate>Sun, 28 Apr 2019 21:14:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/</guid>
+      <description>&lt;p&gt;🌊 InputStream 과 OutputStream
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>소켓 프로그래밍</title>
+      <link>https://jihunhong.github.io/04/28/%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</link>
+      <pubDate>Sun, 28 Apr 2019 21:14:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/28/%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/</guid>
+      <description>&lt;p&gt;🌏 네트워크와 소켓 이해
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>자바 스크립트 어휘 구조</title>
+      <link>https://jihunhong.github.io/04/26/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%96%B4%ED%9C%98-%EA%B5%AC%EC%A1%B0/</link>
+      <pubDate>Fri, 26 Apr 2019 21:19:33 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/26/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%96%B4%ED%9C%98-%EA%B5%AC%EC%A1%B0/</guid>
+      <description>&lt;p&gt;💬 어휘 구조
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>자바 스크립트 문법</title>
+      <link>https://jihunhong.github.io/04/24/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/</link>
+      <pubDate>Wed, 24 Apr 2019 20:28:10 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/24/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%AC%B8%EB%B2%95/</guid>
+      <description>&lt;p&gt;🔍 자바스크립트 문법
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>자바 스크립트 - 변수</title>
+      <link>https://jihunhong.github.io/04/23/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8---%EB%B3%80%EC%88%98/</link>
+      <pubDate>Tue, 23 Apr 2019 19:48:10 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/23/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8---%EB%B3%80%EC%88%98/</guid>
+      <description>&lt;p&gt;🔍 자바스크립트 소개
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,7 +137,9 @@
       <pubDate>Tue, 09 Apr 2019 01:03:21 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/04/09/%EC%B7%A8%EC%97%85%EC%9D%84-%ED%96%88%EB%8B%A4/</guid>
-      <description>&lt;p&gt;취업 후기&lt;/p&gt;</description>
+      <description>&lt;p&gt;취업 후기
+
+&lt;br&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -35,7 +148,8 @@
       <pubDate>Thu, 21 Feb 2019 05:49:32 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/02/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%82%BD%EC%A7%88%EA%B8%B0/</guid>
-      <description>&lt;p&gt;데이터베이스 삽질기&lt;/p&gt;</description>
+      <description>&lt;p&gt;데이터베이스 삽질기
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -44,7 +158,8 @@
       <pubDate>Tue, 22 Jan 2019 07:32:11 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/01/22/organizing-containers-of-balls/</guid>
-      <description>&lt;p&gt;해커랭크 문제 풀이&lt;/p&gt;</description>
+      <description>&lt;p&gt;해커랭크 문제 풀이
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -53,7 +168,8 @@
       <pubDate>Sun, 23 Dec 2018 06:25:32 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/12/23/picking-numbers/</guid>
-      <description>&lt;p&gt;값 갱신을 이용한 문제풀이&lt;/p&gt;</description>
+      <description>&lt;p&gt;값 갱신을 이용한 문제풀이
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -62,7 +178,8 @@
       <pubDate>Tue, 27 Nov 2018 18:08:12 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/11/27/%EB%8F%85%ED%95%99%EC%82%AC-%ED%9B%84%EA%B8%B0/</guid>
-      <description>&lt;p&gt;컴퓨터과학 독학사 4단계 후기&lt;/p&gt;</description>
+      <description>&lt;p&gt;컴퓨터과학 독학사 4단계 후기
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -71,7 +188,8 @@
       <pubDate>Thu, 22 Nov 2018 03:31:11 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/11/22/dunpic.net-%EA%B0%9C%EB%B0%9C%EA%B8%B0/</guid>
-      <description>&lt;p&gt;네오플 오픈 API를 이용한 프로젝트&lt;/p&gt;</description>
+      <description>&lt;p&gt;네오플 오픈 API를 이용한 프로젝트
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -80,7 +198,8 @@
       <pubDate>Fri, 24 Aug 2018 04:52:14 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/08/24/countdiv/</guid>
-      <description>&lt;p&gt;floor() 몫 구하기&lt;/p&gt;</description>
+      <description>&lt;p&gt;floor() 몫 구하기
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -89,7 +208,8 @@
       <pubDate>Wed, 23 May 2018 13:58:34 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/05/23/maxcounters/</guid>
-      <description>&lt;p&gt;curMax값을 할당한 이후 increase()연산을 수행하면 해결되는 문제였다.&lt;/p&gt;</description>
+      <description>&lt;p&gt;curMax값을 할당한 이후 increase()연산을 수행하면 해결되는 문제였다.
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -98,7 +218,8 @@
       <pubDate>Tue, 22 May 2018 13:24:17 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/05/22/permcheck/</guid>
-      <description>&lt;p&gt;배열을 이용한 문제풀이&lt;/p&gt;</description>
+      <description>&lt;p&gt;배열을 이용한 문제풀이
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -107,7 +228,8 @@
       <pubDate>Sat, 19 May 2018 10:47:04 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/05/19/missinginteger/</guid>
-      <description>&lt;p&gt;배열의 인덱스를 조정해서 푼 문제풀이&lt;/p&gt;</description>
+      <description>&lt;p&gt;배열의 인덱스를 조정해서 푼 문제풀이
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -116,7 +238,8 @@
       <pubDate>Fri, 18 May 2018 10:16:43 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/05/18/frogriverone/</guid>
-      <description>&lt;p&gt;HashSet을 이용한 문제 풀이&lt;/p&gt;</description>
+      <description>&lt;p&gt;HashSet을 이용한 문제 풀이
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -125,7 +248,8 @@
       <pubDate>Fri, 18 May 2018 10:16:43 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/05/18/permmissingelem-/-tapeequilibrium/</guid>
-      <description>&lt;p&gt;배열 원소들의 합을 이용한 문제 풀이&lt;/p&gt;</description>
+      <description>&lt;p&gt;배열 원소들의 합을 이용한 문제 풀이
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -134,7 +258,8 @@
       <pubDate>Tue, 15 May 2018 09:53:28 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/05/15/oddoccurrencesinarray/</guid>
-      <description>&lt;p&gt;HashMap을 이용한 문제 풀이&lt;/p&gt;</description>
+      <description>&lt;p&gt;HashMap을 이용한 문제 풀이
+&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -143,7 +268,8 @@
       <pubDate>Sat, 07 Apr 2018 06:03:58 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/04/07/static-resource%EC%9D%98-%EB%82%B4%EC%9A%A9%EC%9D%B4-%EB%B3%80%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EA%B2%BD%EC%9A%B0./</guid>
-      <description>&lt;p&gt;The content of the Static Resource does not change. ( CSS, IMG, ETC &amp;hellip; )&lt;/p&gt;</description>
+      <description>&lt;p&gt;The content of the Static Resource does not change. ( CSS, IMG, ETC &amp;hellip; )
+&lt;/p&gt;</description>
     </item>
     
     <item>
