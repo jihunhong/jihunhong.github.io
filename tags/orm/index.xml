@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Orm on harry&#39;s blog</title>
+    <link>https://jihunhong.github.io/tags/orm/</link>
+    <description>Recent content in Orm on harry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 May 2019 23:58:32 +0900</lastBuildDate>
+    
+	<atom:link href="https://jihunhong.github.io/tags/orm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RDBMS와 ORM</title>
+      <link>https://jihunhong.github.io/05/02/rdbms%EC%99%80-orm/</link>
+      <pubDate>Thu, 02 May 2019 23:58:32 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/02/rdbms%EC%99%80-orm/</guid>
+      <description>&lt;p&gt;📁 RDBMS
+&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
