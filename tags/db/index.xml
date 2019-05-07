@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Db on harry&#39;s blog</title>
+    <title>DB on harry&#39;s blog</title>
     <link>https://jihunhong.github.io/tags/db/</link>
-    <description>Recent content in Db on harry&#39;s blog</description>
+    <description>Recent content in DB on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 03 May 2019 17:43:11 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 May 2019 17:46:32 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/tags/db/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Basic Queries</title>
-      <link>https://jihunhong.github.io/05/03/basic-queries/</link>
-      <pubDate>Fri, 03 May 2019 17:43:11 +0900</pubDate>
+      <title>조인 (JOIN)</title>
+      <link>https://jihunhong.github.io/05/07/%EC%A1%B0%EC%9D%B8-join/</link>
+      <pubDate>Tue, 07 May 2019 17:46:32 +0900</pubDate>
       
-      <guid>https://jihunhong.github.io/05/03/basic-queries/</guid>
-      <description>&lt;p&gt;Basc Queries
-&lt;/p&gt;</description>
+      <guid>https://jihunhong.github.io/05/07/%EC%A1%B0%EC%9D%B8-join/</guid>
+      <description>&lt;p&gt;🙏 조인 (JOIN)&lt;/p&gt;</description>
     </item>
     
     <item>
-      <title>RDBMS와 ORM</title>
-      <link>https://jihunhong.github.io/05/02/rdbms%EC%99%80-orm/</link>
-      <pubDate>Thu, 02 May 2019 23:58:32 +0900</pubDate>
+      <title>Basic Queries</title>
+      <link>https://jihunhong.github.io/05/03/basic-queries/</link>
+      <pubDate>Fri, 03 May 2019 17:02:14 +0900</pubDate>
       
-      <guid>https://jihunhong.github.io/05/02/rdbms%EC%99%80-orm/</guid>
-      <description>&lt;p&gt;📁 RDBMS
-&lt;/p&gt;</description>
+      <guid>https://jihunhong.github.io/05/03/basic-queries/</guid>
+      <description>&lt;p&gt;Baisc Queries&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>RDBMS</title>
+      <link>https://jihunhong.github.io/05/02/rdbms/</link>
+      <pubDate>Thu, 02 May 2019 21:12:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/02/rdbms/</guid>
+      <description>&lt;p&gt;📁 RDBMS&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +44,7 @@
       <pubDate>Thu, 21 Feb 2019 05:49:32 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/02/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%82%BD%EC%A7%88%EA%B8%B0/</guid>
-      <description>&lt;p&gt;데이터베이스 삽질기
-&lt;/p&gt;</description>
+      <description>&lt;p&gt;데이터베이스 삽질기&lt;/p&gt;</description>
     </item>
     
   </channel>
