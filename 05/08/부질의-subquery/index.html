@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.55.3 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Maven</title>
+    <title>부질의 (SubQuery)</title>
     <meta name="author" content="JIHUN HONG">
     <meta name="keywords" content="">
 
@@ -36,15 +36,15 @@
     
 
     
-    <meta name="description" content="🐦Maven">
-    <meta property="og:description" content="🐦Maven">
+    <meta name="description" content="💭 Subquery (부질의)">
+    <meta property="og:description" content="💭 Subquery (부질의)">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Maven">
-    <meta property="og:url" content="/05/01/maven/">
+    <meta property="og:title" content="부질의 (SubQuery)">
+    <meta property="og:url" content="/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
     <meta property="og:site_name" content="harry&#39;s blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="harry&#39;s blog">
-    <meta name="twitter:description" content="🐦Maven">
+    <meta name="twitter:description" content="💭 Subquery (부질의)">
     
     
 
@@ -56,7 +56,7 @@
     
 
     
-      <meta property="og:image" content="https://alternative.me/icons/apache-ant.jpg">
+      <meta property="og:image" content="https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2018/08/SQL-Subquery-01.jpg">
     
     
     
@@ -246,15 +246,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Maven
+      부질의 (SubQuery)
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-05-01T20:44:24&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-05-08T21:17:26&#43;09:00">
         
-  May 1, 2019
+  May 8, 2019
 
       </time>
     
@@ -275,79 +275,90 @@ if (!doNotTrack) {
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>🐦Maven</p>
+              <p>💭 Subquery (부질의)</p>
 
 <blockquote>
-<p>Java 기반의 프로젝트 빌드, 컴파일을 수행하는 빌드 도구이다.
-빌드시 테스트를 병행 수행 하거나 서버 측 deploy 자원을 관리 할 수 있다.
-<em><code>Maven</code>의 주된 목표는 최단시간내에 개발한것의 전체 상태를 이해 할 수 있게 하는것입니다.</em>
-<em>- 📝 <a href="https://maven.apache.org/what-is-maven.html">What is Maven?</a></em></p>
+<p>주로 where 조건에 작용하는 하나의 쿼리로써, 내부질의를 통해 외부의 본 목적인 쿼리를 해석할 수 있게 하는것.</p>
 </blockquote>
 
-<h2 id="의존성-관리">🔧 의존성 관리</h2>
+<p>✔️ <strong>원칙적으로는</strong> 서브쿼리 내에서 order by 절을 포함할 수 없다.</p>
+
+<p><br></p>
+
+<h2 id="단일행-서브쿼리">☝️ 단일행 서브쿼리</h2>
 
 <blockquote>
-<p><code>/pom.xml</code></p>
+<p>메인 쿼리로 전달 되는 행이 하나일 경우를 말한다.</p>
+</blockquote>
 
-<pre><code class="language-Maven">
-    &lt;dependency&gt;
-        &lt;groupId&gt;org.mariadb.jdbc&lt;/groupId&gt;
-        &lt;artifactId&gt;mariadb-java-client&lt;/artifactId&gt;
-        &lt;version&gt;2.0.1&lt;/version&gt;
-                ...
-    &lt;/dependency&gt;
+<p><strong>✔️ 서브쿼리에서 메인쿼리로의 전달은 주로 하나의 오퍼레이터로 이루어진다.</strong>
+<br>
+<br></p>
 
+<h3 id="서브-쿼리-사용시-유의점">❗ 서브 쿼리 사용시 유의점</h3>
+
+<blockquote>
+<p><strong>FROM</strong> 절에 오는 테이블 위치에 <strong>서브쿼리를 alias시킨 테이블을 선언하여 사용</strong> 하는 방법도 있음을 유의하자.</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="실습문제-1-현재-전체사원의-평균-연봉보다-적은-급여를-받는-사원의-이름-급여를-나타내세요">📜 실습문제 1. 현재 전체사원의 평균 연봉보다 적은 급여를 받는 사원의  이름, 급여를 나타내세요.</h3>
+
+<pre><code class="language-SQL">SELECT Concat(a.first_name, ' ', a.last_name) AS NAME,
+       b.salary
+FROM   employees a,
+       salaries b
+WHERE  a.emp_no = b.emp_no
+       AND b.to_date = '9999-01-01'
+       AND b.salary &lt; (SELECT Avg(salary)
+                       FROM   salaries
+                       WHERE  to_date = '9999-01-01');
 </code></pre>
+
+<p><br></p>
+
+<h3 id="실습문제-2-현재-가장적은-평균-급여를-받고-있는-직책에서-평균-급여를-구하세요">📜 실습문제 2. 현재 가장적은 평균 급여를 받고 있는 직책에서 평균 급여를 구하세요.</h3>
+
+<blockquote>
+<p>서브쿼리의 테이블을 <strong>Alias 시킨후 FROM절에서 사용</strong> 한 예제</p>
 </blockquote>
 
-<ul>
-<li><strong><code>properties</code></strong>
-- 특정 값을 배포 환경에 따라 값을 다르게 하기 위해서 다음과 같이 치환하고자 하는 변수를 추가한다.
-<code>maven
-&lt;properties&gt;
-    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
-    &lt;!--  빌드시 소스코드 인코딩 타입 지정 --&gt;
-&lt;/properties&gt;
-</code></li>
-</ul>
+<pre><code class="language-SQL">SELECT Min(avg_salary)
+FROM   (SELECT Round(Avg(a.salary)) AS avg_salary
+        FROM   salaries a,
+               titles b
+        WHERE  a.emp_no = b.emp_no
+               AND a.to_date = '9999-01-01'
+               AND b.to_date = '9999-01-01'
+        GROUP  BY b.title) a;
+</code></pre>
 
-<p><img src="https://i.imgur.com/iAWnd2w.png" alt="캡처" />
-- 빌드된 <code>.jar</code> 에서는 루트 디렉토리에 생성한 webapp을 포함하지 않은채로 빌드되지 않는다.</p>
+<h2 id="다중행-서브쿼리">🤘 다중행 서브쿼리</h2>
 
-<ol>
-<li><code>new</code> ➡️ <code>📁 SourceFolder</code> (&ldquo;/resources&rdquo;)</li>
-<li><code>📁 webapp</code> ➡️ <code>📁 SourceFolder</code> (&ldquo;/resources&rdquo;)</li>
-<li><code>📁 ROOT project</code> ➡️ 🔧 <code>Properties</code> ➡️ <code>Java Build Path의 include 확인</code></li>
-<li><code>📄 pom.xml</code>에  <code>&lt;resources&gt;</code>추가</li>
-</ol>
+<blockquote>
+<p>메인쿼리로의 전달 되는 서브쿼리의 행이 여러개인 경우 다중행 연산자 <code>IN</code> <code>ANY</code> <code>ALL</code> 을 사용한다.</p>
+</blockquote>
 
-<ul>
-<li>✔️ (Optional) DOCUMENT_ROOT path를 절대경로로 바꾸어 주는 코드를 작성해야한다.</li>
+<p><br></p>
 
-<li><p><strong>❗️ 클래스 로딩시 실행되는 <code>static{}</code>를 만들어 절대경로를 바꿔주자</strong></p>
+<h3 id="현재-50000-보다-많은-급여를-받는-사원의-이름과-급여를-구하세요">📜 현재 50000 보다 많은 급여를 받는 사원의 이름과 급여를 구하세요</h3>
 
-<pre><code class="language-java">static {
-    // this가 로딩됐을때 실행되는 부분
-    try {
-        documentRoot = new File(RequestHandler.class.
-                getProtectionDomain().
-                getCodeSource().
-                getLocation().
-                toURI()).
-                getPath();
+<pre><code class="language-SQL">SELECT a.first_name,
+       b.salary
+FROM   employees a,
+       salaries b
+WHERE  a.emp_no = b.emp_no
+       AND b.to_date = '9999-01-01'
+       AND ( a.emp_no, b.salary ) IN (SELECT emp_no,
+                                             salary
+                                      -- 'in(sub_query)' &lt;-&gt; ='any(sub_query)'
+                                      FROM   salaries
+                                      WHERE  to_date = '9999-01-01'
+                                             AND salary &gt;= 50000);
+</code></pre>
 
-        documentRoot += &quot;/webapp&quot;;
-
-        System.out.println(&quot;----&gt;&quot; + documentRoot);
-
-    } catch (URISyntaxException e) {
-        // TODO Auto-generated catch block
-        e.printStackTrace();
-    }
-
-}
-</code></pre></li>
-</ul>
+<p><strong>✔️ 서브쿼리에서 SELECT한 속성으로 이루어진 테이블을 참조 하여 WHERE절에서 해당 컬럼을 선택해 판별 할 수 있다.</strong></p>
               
             </div>
           </div>
@@ -359,7 +370,7 @@ if (!doNotTrack) {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/deploy/">DEPLOY</a>
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/db/">DB</a>
 
                   </div>
                 
@@ -372,7 +383,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/01/%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" data-tooltip="멀티 스레드 프로그래밍">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -380,7 +391,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/04/30/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9D%EC%B2%B4/" data-tooltip="자바 스크립트 - 객체">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/07/%EC%A1%B0%EC%9D%B8-join/" data-tooltip="조인 (JOIN)">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -398,19 +409,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/01/maven/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/01/maven/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/01/maven/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -458,7 +469,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/01/%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" data-tooltip="멀티 스레드 프로그래밍">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -466,7 +477,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/04/30/%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EA%B0%9D%EC%B2%B4/" data-tooltip="자바 스크립트 - 객체">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/07/%EC%A1%B0%EC%9D%B8-join/" data-tooltip="조인 (JOIN)">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -484,19 +495,19 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/01/maven/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/01/maven/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/01/maven/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -526,19 +537,19 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F01%2Fmaven%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F08%2F%25EB%25B6%2580%25EC%25A7%2588%25EC%259D%2598-subquery%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F01%2Fmaven%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F08%2F%25EB%25B6%2580%25EC%25A7%2588%25EC%259D%2598-subquery%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F01%2Fmaven%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F08%2F%25EB%25B6%2580%25EC%25A7%2588%25EC%259D%2598-subquery%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -816,9 +827,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/jihunhong.github.io\/05\/01\/maven\/';
+          this.page.url = 'https:\/\/jihunhong.github.io\/05\/08\/%EB%B6%80%EC%A7%88%EC%9D%98-subquery\/';
           
-            this.page.identifier = '\/05\/01\/maven\/'
+            this.page.identifier = '\/05\/08\/%EB%B6%80%EC%A7%88%EC%9D%98-subquery\/'
           
         };
         (function() {

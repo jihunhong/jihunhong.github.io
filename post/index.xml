@@ -6,10 +6,19 @@
     <description>Recent content in Posts on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 May 2019 17:46:32 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 08 May 2019 21:17:26 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>부질의 (SubQuery)</title>
+      <link>https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/</link>
+      <pubDate>Wed, 08 May 2019 21:17:26 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/</guid>
+      <description>&lt;p&gt;💭 Subquery (부질의)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>조인 (JOIN)</title>
