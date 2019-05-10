@@ -28,7 +28,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.55.3 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Basic Queries</title>
+    <title>AWS 프리티어 과금</title>
     <meta name="author" content="JIHUN HONG">
     <meta name="keywords" content="">
 
@@ -36,15 +36,15 @@
     
 
     
-    <meta name="description" content="Baisc Queries">
-    <meta property="og:description" content="Baisc Queries">
+    <meta name="description" content="💸 프리티어 기간을 지나서 요금이 청구됐을때">
+    <meta property="og:description" content="💸 프리티어 기간을 지나서 요금이 청구됐을때">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Basic Queries">
-    <meta property="og:url" content="/05/03/basic-queries/">
+    <meta property="og:title" content="AWS 프리티어 과금">
+    <meta property="og:url" content="/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
     <meta property="og:site_name" content="harry&#39;s blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="harry&#39;s blog">
-    <meta name="twitter:description" content="Baisc Queries">
+    <meta name="twitter:description" content="💸 프리티어 기간을 지나서 요금이 청구됐을때">
     
     
 
@@ -56,7 +56,7 @@
     
 
     
-      <meta property="og:image" content="https://pbs.twimg.com/profile_images/1057765761316352000/CxvR4Rax_400x400.jpg">
+      <meta property="og:image" content="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png">
     
     
     
@@ -246,15 +246,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Basic Queries
+      AWS 프리티어 과금
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-05-03T17:02:14&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-05-10T08:57:34&#43;09:00">
         
-  May 3, 2019
+  May 10, 2019
 
       </time>
     
@@ -263,9 +263,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>, 
-    
-      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>
+      <a class="category-link" href="https://jihunhong.github.io/categories/memo">memo</a>
     
   
 
@@ -275,207 +273,58 @@ if (!doNotTrack) {
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Baisc Queries</p>
+              <p>💸 프리티어 기간을 지나서 요금이 청구됐을때</p>
 
-<ul>
-<li>Command 취소
-- 긴 쿼리를 작성하다가 중간에 취소해야하는 경우<code>\c</code>를 붙혀주면 된다.</li>
-</ul>
+<p><br></p>
 
-<h2 id="data-migration"><code>Data Migration</code></h2>
+<p><img src="https://i.imgur.com/st5L44f.png" alt="free-tier" />
+<br></p>
 
-<blockquote>
-<p>📝<code>텍스트(.txt)</code> 파일을 읽어 테이블에 인서트하는 <strong><code>LOAD DATA INFILE</code></strong> 구문이 있다.
-기본 INSERT 구문을 쓰는 것보다 20배 정도 빠르다.</p>
-</blockquote>
+<p><code>AWS 프리티어</code>는 1년간 해당하는 서비스를 무료로 이용할 수 있게하는 모델이다.</p>
 
-<pre><code class="language-sql">MYSQL &gt; load data local infile '/home/webmaster/pet.txt' into table pet;
-</code></pre>
+<p><a href="https://github.com/jihunhong/dunpic">작년부터 만들고 진행한 프로젝트</a>를</p>
 
-<p><strong><code>✔️ 한 레코드의 값들은 탭(tab)으로 구분되어야 한다.</code></strong>
-<strong><code>✔️ 순서는 테이블을 생성할 때의 column순서대로 되어있어야 한다.</code></strong></p>
+<p>EC2와 RDS 프리티어를 이용해서 배포하고 있었는데</p>
 
-<h2 id="order-by"><code>ORDER BY</code></h2>
+<p>지난달 <a href="https://jihunhong.github.io/04/09/%EC%B7%A8%EC%97%85%EC%9D%84-%ED%96%88%EB%8B%A4/">취업 후 시간이 별로없어</a> 서버관리에 신경을 못썼다.</p>
 
-<blockquote>
-<p>❗️ <code>order by</code>의 기본 정렬 옵션은 <code>ASC (오름차순)</code>이다.</p>
-</blockquote>
+<p>프리티어의 한도가 초과되어 과금이 발생하면 등록한 이메일로 Notification을 보내는 서비스를 사용중이어서</p>
 
-<h2 id="about-syntax"><code>About Syntax</code></h2>
+<p>메일을 받으면 서비스를 종료하려고 생각하던 와중에</p>
 
-<ul>
-<li><code>%</code> - 여러개의 문자열</li>
-<li><code>_</code> - 1개의 문자</li>
-</ul>
+<p>이번달 요금이 얼마나 청구됐나 체크해봤는데 매달 <a href="https://aws.amazon.com/ko/route53/">Route 53</a> 이용에 청구되던 액수보다 너무 많았다.</p>
 
-<h2 id="count-attribute"><code>count(Attribute)</code></h2>
+<p><img src="https://i.imgur.com/utD3VnD.png" alt="과금" /></p>
+
+<p>1년이 지나간 시점에서 프리티어가 종료되었고 Notification의 서비스도 종료되었기 때문에</p>
+
+<p>이런 문제가 발생한것 같았다.</p>
+
+<p>내 경우는 메일을 받으면 서비스를 종료하려고 했었는데 이미 과금이 발생한 경우였는데</p>
+
+<p>프리티어 과금에 관한 내용을 검색해보니 1~2회?에 한에서 과금에 관한 조정이 가능하다는 말이 있어서</p>
+
+<p>번역기의 도움을받아 확인차 문의을 넣어봤다.</p>
 
 <blockquote>
-<p>❗️ <code>Attribute</code>가 <code>Null</code>값을 가진 record를 제외하고 카운팅한다.</p>
+<p>The ec2 free tier and rds we used last month cost a lot.
+Did my free tier closed?
+<br>I was using a notification service to check the free-tier quota, but I was embarrassed by the unexpected charge.
+<br>I did not get the charge because I did not have money in the account I registered, but can you get rid of the charge?</p>
 </blockquote>
 
-<h3 id="restore-dump">restore dump</h3>
+<p>문의를 넣고 얼마 지나지 않아 답변을 받을 수 있었다.</p>
 
-<pre><code class="language-shell"># mysql -u root -p &lt; employees.sql
-</code></pre>
-
-<h3 id="hr-계정-생성">hr 계정 생성</h3>
-
-<ul>
-<li><p>로컬 접근 계정</p>
-
-<pre><code class="language-shell">create user 'hr'@'localhost' identified by 'hr';
-</code></pre>
-
-<p>🔑 권한 부여</p>
-
-<pre><code class="language-shell">grant all privileges on employees.* to 'hr'@'localhost';
-</code></pre></li>
-
-<li><p>192.168.1.56에서 접근하는 hr 계정</p>
-
-<pre><code class="language-shell">create user 'hr'@'192.168.1.56' identified by 'hr';
-</code></pre>
-
-<p>🔑 권한 부여</p>
-
-<pre><code class="language-shell">grant all privileges on employees.* to 'hr'@'localhost';
-</code></pre></li>
-
-<li><p>🌀 <code>Grant</code> 테이블 reload</p>
-
-<pre><code class="language-shell">flush privileges
-</code></pre></li>
-</ul>
-
-<h2 id="mysql-함수">MySQL 함수</h2>
-
-<h3 id="숫자형-함수">숫자형 함수</h3>
-
-<h4 id="now"><code>now()</code></h4>
-
-<pre><code class="language-SQL">select now(), sleep(2), now();
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>now()</th>
-<th>sleep(2)</th>
-<th>now()</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>2019-05-03 14:22:16</td>
-<td>0</td>
-<td>2019-05-03 14:22:16</td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="sysdate"><code>sysdate()</code></h4>
-
-<pre><code class="language-sql">select sysdate(), sleep(2), sysdate(2);
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>sysdate()</th>
-<th>sleep(2)</th>
-<th>sysdate()</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>2019-05-03 14:23:03</td>
-<td>0</td>
-<td>2019-05-03 14:23:05.48</td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="date-format-date-format"><code>DATE_FORMAT(date,format)</code></h4>
-
-<pre><code class="language-SQL">select date_format(now(), '%Y %c월 %d일 %h시 %i분 %s초')
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>date_format(now(), &lsquo;%Y %c월 %d일 %h시 %i분 %s초&rsquo;)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>2019 5월 03일 02시 29분 25초</td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="period-diff"><code>PERIOD_DIFF()</code></h4>
+<p>답변 내용을 요약해보면</p>
 
 <blockquote>
-<p>YYMM이나 YYYMM으로 표기된 두 날짜 사이의 <code>Month</code>를 반환</p>
-
-<pre><code class="language-sql">SELECT concat(first_name, ' ', last_name) AS name,
-PERIOD_DIFF( DATE_FORMAT(CURDATE(), '%Y%m'),
-         DATE_FORMAT(hire_date, '%Y%m') )
-FROM employees
-</code></pre>
+<p>결제 조정을 준비하기위해 내 계정의 청구 금액을 모니터링한 후 더이상 과금되지 않는다면
+<br>결제 조정에 관한 요청을 준비할것 이라는 답변이었다.</p>
 </blockquote>
 
-<h4 id="date-add"><code>DATE_ADD</code></h4>
+<p>이후 하루동안 모니터링이 이루어졌고 4월의 청구액에 더해 5월 9일까지의 청구금액도</p>
 
-<pre><code class="language-SQL">select first_name, hiredate,
-       date_add(hiredate, interval 5 month);
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>first_name</th>
-<th>hiredate</th>
-<th>date_add(hiredate, interval 5 month)</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Georgi</td>
-<td>1986-06-26</td>
-<td>1986-11-26</td>
-</tr>
-
-<tr>
-<td>Bezalel</td>
-<td>1985-11-21</td>
-<td>1986-04-21</td>
-</tr>
-
-<tr>
-<td>Parto</td>
-<td>1986-08-28</td>
-<td>1987-01-28</td>
-</tr>
-
-<tr>
-<td>ㅡㅡㅡ</td>
-<td>ㅡㅡㅡ</td>
-<td>ㅡㅡㅡ</td>
-</tr>
-</tbody>
-</table>
-
-<h4 id="cast-expression-as-type-convert-expression-type"><code>CAST(Expression AS type)</code> / <code>CONVERT(Expression, type)</code></h4>
-
-<blockquote>
-<p>type을 변경 하는데 유용하게 쓰이는 함수</p>
-</blockquote>
+<p>크레딧 사용을 통해 조정될 수 있었다.</p>
               
             </div>
           </div>
@@ -487,7 +336,7 @@ FROM employees
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/db/">DB</a>
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/aws/">AWS</a>
 
                   </div>
                 
@@ -500,7 +349,7 @@ FROM employees
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/05/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%A0%95%EB%A6%AC/" data-tooltip="리눅스 정리">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -508,7 +357,7 @@ FROM employees
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/02/rdbms/" data-tooltip="RDBMS">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/" data-tooltip="부질의 (SubQuery)">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -526,19 +375,19 @@ FROM employees
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/03/basic-queries/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/03/basic-queries/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/03/basic-queries/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -586,7 +435,7 @@ FROM employees
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/05/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%A0%95%EB%A6%AC/" data-tooltip="리눅스 정리">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -594,7 +443,7 @@ FROM employees
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/02/rdbms/" data-tooltip="RDBMS">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/" data-tooltip="부질의 (SubQuery)">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -612,19 +461,19 @@ FROM employees
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/03/basic-queries/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/03/basic-queries/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/03/basic-queries/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -654,19 +503,19 @@ FROM employees
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F03%2Fbasic-queries%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F10%2Faws-%25ED%2594%2584%25EB%25A6%25AC%25ED%258B%25B0%25EC%2596%25B4-%25EA%25B3%25BC%25EA%25B8%2588%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F03%2Fbasic-queries%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F10%2Faws-%25ED%2594%2584%25EB%25A6%25AC%25ED%258B%25B0%25EC%2596%25B4-%25EA%25B3%25BC%25EA%25B8%2588%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F03%2Fbasic-queries%2F">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F10%2Faws-%25ED%2594%2584%25EB%25A6%25AC%25ED%258B%25B0%25EC%2596%25B4-%25EA%25B3%25BC%25EA%25B8%2588%2F">
           <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
         </a>
       </li>
@@ -944,9 +793,9 @@ $(document).ready(function() {
     
       <script>
         var disqus_config = function () {
-          this.page.url = 'https:\/\/jihunhong.github.io\/05\/03\/basic-queries\/';
+          this.page.url = 'https:\/\/jihunhong.github.io\/05\/10\/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88\/';
           
-            this.page.identifier = '\/05\/03\/basic-queries\/'
+            this.page.identifier = '\/05\/10\/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88\/'
           
         };
         (function() {

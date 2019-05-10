@@ -6,10 +6,19 @@
     <description>Recent content in Categories on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 08 May 2019 21:17:26 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 10 May 2019 08:57:34 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>memo</title>
+      <link>https://jihunhong.github.io/categories/memo/</link>
+      <pubDate>Fri, 10 May 2019 08:57:34 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/categories/memo/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Study</title>
@@ -53,15 +62,6 @@
       <pubDate>Thu, 22 Nov 2018 03:31:11 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/categories/%EA%B0%9C%EB%B0%9C%ED%9B%84%EA%B8%B0/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Memo</title>
-      <link>https://jihunhong.github.io/categories/memo/</link>
-      <pubDate>Sat, 07 Apr 2018 06:03:58 +0900</pubDate>
-      
-      <guid>https://jihunhong.github.io/categories/memo/</guid>
       <description></description>
     </item>
     

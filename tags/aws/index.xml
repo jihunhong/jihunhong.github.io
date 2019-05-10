@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AWS on harry&#39;s blog</title>
+    <link>https://jihunhong.github.io/tags/aws/</link>
+    <description>Recent content in AWS on harry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 May 2019 08:57:34 +0900</lastBuildDate>
+    
+	<atom:link href="https://jihunhong.github.io/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>AWS 프리티어 과금</title>
+      <link>https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/</link>
+      <pubDate>Fri, 10 May 2019 08:57:34 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/</guid>
+      <description>&lt;p&gt;💸 프리티어 기간을 지나서 요금이 청구됐을때&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

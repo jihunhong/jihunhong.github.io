@@ -3,19 +3,48 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jihunhong.github.io/categories/</loc>
-    <lastmod>2019-05-08T21:17:26+09:00</lastmod>
+    <loc>https://jihunhong.github.io/tags/aws/</loc>
+    <lastmod>2019-05-10T08:57:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://jihunhong.github.io/tags/db/</loc>
-    <lastmod>2019-05-08T21:17:26+09:00</lastmod>
+    <loc>https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/</loc>
+    <lastmod>2019-05-10T08:57:34+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/categories/</loc>
+    <lastmod>2019-05-10T08:57:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://jihunhong.github.io/post/</loc>
+    <lastmod>2019-05-10T08:57:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/tags/</loc>
+    <lastmod>2019-05-10T08:57:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/</loc>
+    <lastmod>2019-05-10T08:57:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/categories/memo/</loc>
+    <lastmod>2019-05-10T08:57:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/tags/db/</loc>
     <lastmod>2019-05-08T21:17:26+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -28,18 +57,6 @@
   
   <url>
     <loc>https://jihunhong.github.io/categories/til/</loc>
-    <lastmod>2019-05-08T21:17:26+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jihunhong.github.io/tags/</loc>
-    <lastmod>2019-05-08T21:17:26+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jihunhong.github.io/</loc>
     <lastmod>2019-05-08T21:17:26+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -309,12 +326,6 @@
   
   <url>
     <loc>https://jihunhong.github.io/tags/css/</loc>
-    <lastmod>2018-04-07T06:03:58+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jihunhong.github.io/categories/memo/</loc>
     <lastmod>2018-04-07T06:03:58+09:00</lastmod>
     <priority>0</priority>
   </url>
