@@ -1,0 +1,993 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+  
+
+
+  
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8284554096460532",
+          enable_page_level_ads: true
+     });
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.55.3 with theme Tranquilpeak 0.4.3-BETA">
+    <title>Java OOP</title>
+    <meta name="author" content="JIHUN HONG">
+    <meta name="keywords" content="">
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+    <meta name="description" content="📖 Java OOP">
+    <meta property="og:description" content="📖 Java OOP">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="Java OOP">
+    <meta property="og:url" content="/05/10/java-oop/">
+    <meta property="og:site_name" content="harry&#39;s blog">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="harry&#39;s blog">
+    <meta name="twitter:description" content="📖 Java OOP">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="//www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+    
+
+    
+      <meta property="og:image" content="https://www.janbasktraining.com/blog/wp-content/uploads/2018/05/What-is-Opp.jpg">
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="//www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="//www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Java OOP
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-05-10T17:06:14&#43;09:00">
+        
+  May 10, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>, 
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>📖 Java OOP</p>
+
+<h1 id="java-oop">📖 Java OOP</h1>
+
+<p><br></p>
+
+<h3 id="현실을-그대로-옮긴다">현실을 그대로 옮긴다</h3>
+
+<p>현실의 객체들이 가지고 있는 <code>속성</code>과 <code>기능</code>들 중에서 중요한 것들만 남기고 불필요한 것은 없애게 된다. 이러한 과정을 “추상화 한다.” 라고 말한다.</p>
+
+<h3 id="재사용한다는-의미">♻️ 재사용한다는 의미</h3>
+
+<p>클래스를 다시 사용하는것이 아니라 추상화를 통해 확장시키는것의 의미이다</p>
+
+<h3 id="일반화와-추상-클래스">일반화와 추상 클래스</h3>
+
+<blockquote>
+<p>인스턴스가 될 수 없는 클래스를 &ldquo;추상 클래스&rdquo;라고 한다.</p>
+
+<p>추상 클래스 : 상속을 통해 확장하는 개념의 클래스로 어떤것에 관한 공통적인 기능, 속성을 담고있어 &ldquo;일반화&rdquo;된 것이다.</p>
+</blockquote>
+
+<h4 id="referencing-해서-부모객체-추상-클래스-를-사용하기">Referencing 해서 부모객체(추상 클래스)를 사용하기</h4>
+
+<pre><code class="language-java">Car c = new Bus();
+</code></pre>
+
+<blockquote>
+<p>객체생성시의 유연하고, 확장성 있는 객체를 만들수 있다는 장점</p>
+</blockquote>
+
+<pre><code class="language-java">Car c = new Bus();
+c.달리다();
+c.안내방송하다();   // 불가
+c.주차();          // 오버라이드
+</code></pre>
+
+<p><br>
+<br></p>
+
+<h2 id="solid-by-limky-https-limkydev-tistory-com-77">⭐ SOLID by 📔 <a href="https://limkydev.tistory.com/77">Limky</a></h2>
+
+<blockquote>
+<p>자기 자신 클래스 안에 응집도는 내부적으로 높이고, 타 클래스들 간 결합도는 낮추는 High Cohesion - Loose Coupling 원칙을 객체 지향의 관점에서 도입한 것이다.</p>
+</blockquote>
+
+<p><strong>✔️ 다시말해 응집도가 높은 각 모듈을 재사용함으로써, 수정을 최소화하여 유지보수를 용이하기 위함이다.</strong></p>
+
+<h3 id="srp-single-responsibility-principle-단일-책임-원칙">SRP (Single Responsibility Principle) 단일 책임 원칙</h3>
+
+<blockquote>
+<p>하나의 클래스안에 많은 속성을 넣지말고, 필요한 클래스의 역할과 목적에 맞는 속성과 메서드들을 추려 <strong>하나의 클래스들로 각각 만들어야 한다.</strong></p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="ocp-open-closed-principle-개방-폐쇄-원칙">OCP (Open Closed Principle) 개방 폐쇄 원칙</h3>
+
+<blockquote>
+<p>개발 방향을 상위 클래스 혹은 인터페이스를 중간에 두어 직접적인 연동을 피하게 설계한다.</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="lsp-liskov-substitution-principle-리스코프-치환-원칙">LSP (Liskov Substitution Principle) 리스코프 치환 원칙</h3>
+
+<blockquote>
+<p>상속의 개념을 위아래 계층으로 나누는것이 아닌 분류하는것으로 생각하는 관점으로 상속을 확장의 개념으로 설계하는것</p>
+</blockquote>
+
+<p>❌ Father harry = new Son();
+    - 해리라는 이름의 아들이 아버지의 행동을한다.
+⭕ Animal mickey = new Rat();
+    - 미키라는 이름의 쥐가 동물의 행동을 한다.</p>
+
+<p>✔️ 클래스의타입 이름 = new 하위클래스();로 기억하자.</p>
+
+<p><br></p>
+
+<h3 id="isp-interface-segregation-principle-인터페이스-분리-원칙">ISP (Interface Segregation Principle) 인터페이스 분리 원칙</h3>
+
+<blockquote>
+<p>SRP와 같은 원인에 대한 다른 해결책을 제시한다.
+이미 만들어진 여러개의 속성과 메서드를 <strong><code>인터페이스</code></strong> 를 통해 필터링하여 상황에 맞게 사용한다는 방식</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="dip-dependency-inversion-principle-의존-역전-원칙">DIP (Dependency Inversion Principle) 의존 역전 원칙</h3>
+
+<blockquote>
+<p>상위 클래스가 하위클래스를 의존하는 상황을 인터페이스나 상위클래스를 하나 더 두어 의존하고 있는 방향을 역전 시키는것</p>
+</blockquote>
+
+<p>✔️ 의미적으로 <strong><code>OCP 개방 폐쇄 원칙</code></strong> 과 유사하다.</p>
+
+<p><br></p>
+
+<h2 id="객체-reflection">🔍 객체 Reflection</h2>
+
+<blockquote>
+<p>클래스의 내부정보를 조회하거나 조작하는 기법</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="hashing">#️⃣ HASHING</h3>
+
+<blockquote>
+<p>text, address, 객체내의 int, string, boolean값들을  <code>int값</code>으로 만든것.</p>
+</blockquote>
+
+<ul>
+<li><strong>검색을 빨리하기위해서</strong> 사용한다</li>
+<li><strong>중복될수있다</strong></li>
+<li>데이터 자체가 같은지 비교하고 같다면 데이터의 내용이 같은지를 다시 비교하는식으로 검색</li>
+</ul>
+
+<h2 id="hashcode-와-equals">📌 Hashcode() 와 Equals()</h2>
+
+<h2 id="equals"><code>=</code> equals</h2>
+
+<pre><code class="language-java">Point p1 = new Point(10, 20);
+Point p2 = new Point(10, 20);
+Point p3 = p2;
+
+// == : 두객체의 동일성
+System.out.println(p1 == p2);
+System.out.println(p2 == p3);
+
+//equals : 두 객체의 동질성 비교한다. (내용비교)
+System.out.println(p1.equals(p2));     
+System.out.println(p2.equals(p3));
+</code></pre>
+
+<p>✔️ String을 <code>equals()</code> 메서드로 비교할때, <code>String 문자열</code>끼리 비교되는 반면
+✔️ <strong><code>Point객체</code>는 Override가 안되어있기 때문에 == 로 비교되어 false를 반환한다.</strong></p>
+
+<h3 id="왜-hashcode를-equals와-같이-오버라이드-해야되는지">❓ 왜 hashcode를 equals와 같이 오버라이드 해야되는지</h3>
+
+<blockquote>
+<p><code>hashmap</code>, <code>hashset</code>같은 자료구조들의 비교 과정에서
+성능이 떨어지는 문제 때문에 hashcode를 구현해서 같이 쓴다.</p>
+</blockquote>
+
+<pre><code class="language-java">Set&lt;Point&gt; set = new HashSet&lt;Point&gt;();
+
+Point p1 = new Point(10, 20);
+set.add(p1);
+
+Point p2 = new Point(100, 200);
+set.add(p2);
+
+Point p3 = new Point(10, 20);
+set.add(p3);
+
+for(Point p : set) {
+    System.out.println(p);
+}
+</code></pre>
+
+<pre><code class="language-console">Point [x=100, y=200]
+Point [x=10, y=20]
+
+hashcode()가 Override 되어있을경우 두개만 출력된다
+</code></pre>
+
+<pre><code class="language-console">Point [x=100, y=200]
+Point [x=10, y=20]
+Point [x=100, y=200]
+
+equals만 있다면 세개가 모두 출력
+</code></pre>
+
+<pre><code class="language-java">String str1 = new String(&quot;ABC&quot;);
+        String str2 = new String(&quot;ABC&quot;);
+        System.out.println(str1 == str2);
+        System.out.println(str1.equals(str2));
+
+        System.out.println(str1.hashCode() + &quot; : &quot; + str2.hashCode());
+        System.out.println(System.identityHashCode(str1) + &quot; : &quot;+System.identityHashCode(str2));
+</code></pre>
+
+<pre><code class="language-console">false
+true
+64578 : 64578       //이미 Override되어있기 때문
+366712642 : 1829164700
+</code></pre>
+
+<pre><code class="language-java">String str3 = &quot;ABC&quot;;
+String str4 = &quot;ABC&quot;;
+
+System.out.println(str3 == str4);
+System.out.println(str3.equals(str4));
+
+System.out.println(str3.hashCode() + &quot; : &quot; + str4.hashCode());
+System.out.println(System.identityHashCode(str3) + &quot; : &quot;+System.identityHashCode(str4));
+</code></pre>
+
+<pre><code class="language-console">true
+true
+64578 : 64578
+2018699554 : 2018699554
+
+//모두 같은 객체이다.
+</code></pre>
+
+<blockquote>
+<p>String str3 = &ldquo;ABC&rdquo;; 의 과정에서는 ABC라는 string의 hashcode값을 메모리에 저장한다.</p>
+
+<p>이후 String str4 = &ldquo;ABC&rdquo;; 의 step에서는 같은객체가 있는지 확인한뒤 있다면 같은 객체를 참조하도록 한다.</p>
+
+<p>위와같은 과정은 변수선언을 Literal로 하는 방법이 변수를 재사용하여 사용하기 때문에 유용하다는 점을 시사한다.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/java/">Java</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/oop/">OOP</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/sodid/">SODID</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/hash/">Hash</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/" data-tooltip="AWS 프리티어 과금">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/10/java-oop/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/10/java-oop/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/10/java-oop/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2019 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/" data-tooltip="AWS 프리티어 과금">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/10/java-oop/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/10/java-oop/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/10/java-oop/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F10%2Fjava-oop%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F10%2Fjava-oop%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F10%2Fjava-oop%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="//www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/10/java-oop/">
+                <h3 class="media-heading">Java OOP</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>📖 Java OOP</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/10/aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EA%B3%BC%EA%B8%88/">
+                <h3 class="media-heading">AWS 프리티어 과금</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>💸 프리티어 기간을 지나서 요금이 청구됐을때</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/08/%EB%B6%80%EC%A7%88%EC%9D%98-subquery/">
+                <h3 class="media-heading">부질의 (SubQuery)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>💭 Subquery (부질의)</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/07/%EC%A1%B0%EC%9D%B8-join/">
+                <h3 class="media-heading">조인 (JOIN)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>🙏 조인 (JOIN)</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/06/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%A0%95%EB%A6%AC-2/">
+                <h3 class="media-heading">리눅스 정리 2</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>🌐네트워크 , 💻 Shell 스크립트</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/05/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%A0%95%EB%A6%AC/">
+                <h3 class="media-heading">리눅스 정리</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>💻 패키지 🌐네트워크 🌳 파일시스템</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/03/basic-queries/">
+                <h3 class="media-heading">Basic Queries</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>Baisc Queries</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/02/rdbms/">
+                <h3 class="media-heading">RDBMS</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>📁 RDBMS</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/02/%EC%B1%84%ED%8C%85/">
+                <h3 class="media-heading">채팅</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>✉️ 채팅 프로그래밍</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/01/%EB%A9%80%ED%8B%B0-%EC%8A%A4%EB%A0%88%EB%93%9C-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">
+                <h3 class="media-heading">멀티 스레드 프로그래밍</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>멀티 스레드 프로그래밍</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         35 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/05\/10\/java-oop\/';
+          
+            this.page.identifier = '\/05\/10\/java-oop\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+    
+  </body>
+</html>
+

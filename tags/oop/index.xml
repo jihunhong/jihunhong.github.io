@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OOP on harry&#39;s blog</title>
+    <link>https://jihunhong.github.io/tags/oop/</link>
+    <description>Recent content in OOP on harry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 10 May 2019 17:06:14 +0900</lastBuildDate>
+    
+	<atom:link href="https://jihunhong.github.io/tags/oop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java OOP</title>
+      <link>https://jihunhong.github.io/05/10/java-oop/</link>
+      <pubDate>Fri, 10 May 2019 17:06:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/10/java-oop/</guid>
+      <description>&lt;p&gt;📖 Java OOP&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
