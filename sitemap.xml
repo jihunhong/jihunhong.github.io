@@ -3,8 +3,49 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jihunhong.github.io/tags/adsense/</loc>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://jihunhong.github.io/categories/</loc>
-    <lastmod>2019-05-10T17:06:14+09:00</lastmod>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/tags/google/</loc>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/post/</loc>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/tags/</loc>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/</loc>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/05/11/%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-%ED%95%80pin%EB%B2%88%ED%98%B8%EA%B0%80-%EC%99%94%EB%8B%A4/</loc>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jihunhong.github.io/categories/%EC%9D%BC%EC%83%81/</loc>
+    <lastmod>2019-05-11T12:13:42+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -32,12 +73,6 @@
   </url>
   
   <url>
-    <loc>https://jihunhong.github.io/post/</loc>
-    <lastmod>2019-05-10T17:06:14+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://jihunhong.github.io/tags/sodid/</loc>
     <lastmod>2019-05-10T17:06:14+09:00</lastmod>
     <priority>0</priority>
@@ -51,18 +86,6 @@
   
   <url>
     <loc>https://jihunhong.github.io/categories/til/</loc>
-    <lastmod>2019-05-10T17:06:14+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jihunhong.github.io/tags/</loc>
-    <lastmod>2019-05-10T17:06:14+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://jihunhong.github.io/</loc>
     <lastmod>2019-05-10T17:06:14+09:00</lastmod>
     <priority>0</priority>
   </url>
