@@ -1,18 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>JAVA on harry&#39;s blog</title>
+    <title>Java on harry&#39;s blog</title>
     <link>https://jihunhong.github.io/categories/java/</link>
-    <description>Recent content in JAVA on harry&#39;s blog</description>
+    <description>Recent content in Java on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 22:37:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 21:14:14 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/categories/java/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>JDBC ( Java Database Connectivity)</title>
+      <title>Servlet &amp; JSP</title>
+      <link>https://jihunhong.github.io/05/13/servlet-jsp/</link>
+      <pubDate>Mon, 13 May 2019 21:14:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/13/servlet-jsp/</guid>
+      <description>&lt;p&gt;📄 Servlet &amp;amp; JSP&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>JDBC ( Java Database Connectivity )</title>
       <link>https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/</link>
       <pubDate>Sun, 12 May 2019 22:37:14 +0900</pubDate>
       

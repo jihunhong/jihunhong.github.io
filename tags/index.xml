@@ -6,10 +6,55 @@
     <description>Recent content in Tags on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 12 May 2019 22:37:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 13 May 2019 21:14:14 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JSP</title>
+      <link>https://jihunhong.github.io/tags/jsp/</link>
+      <pubDate>Mon, 13 May 2019 21:14:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/jsp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Servlet</title>
+      <link>https://jihunhong.github.io/tags/servlet/</link>
+      <pubDate>Mon, 13 May 2019 21:14:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/servlet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Client</title>
+      <link>https://jihunhong.github.io/tags/client/</link>
+      <pubDate>Mon, 13 May 2019 21:08:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/client/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Storage</title>
+      <link>https://jihunhong.github.io/tags/storage/</link>
+      <pubDate>Mon, 13 May 2019 21:08:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/storage/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cache</title>
+      <link>https://jihunhong.github.io/tags/cache/</link>
+      <pubDate>Mon, 13 May 2019 21:01:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/cache/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>DB</title>
@@ -111,9 +156,18 @@
     </item>
     
     <item>
+      <title>Object</title>
+      <link>https://jihunhong.github.io/tags/object/</link>
+      <pubDate>Tue, 30 Apr 2019 23:46:17 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/object/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>JS</title>
       <link>https://jihunhong.github.io/tags/js/</link>
-      <pubDate>Tue, 30 Apr 2019 23:46:17 +0900</pubDate>
+      <pubDate>Mon, 29 Apr 2019 21:31:48 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/tags/js/</guid>
       <description></description>
