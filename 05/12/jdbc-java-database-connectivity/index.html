@@ -1,5 +1,9 @@
 
 
+  
+    
+  
+
 
   
 
@@ -24,25 +28,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="Hugo 0.55.3 with theme Tranquilpeak 0.4.3-BETA">
-    <title>Study</title>
+    <title>JDBC ( Java Database Connectivity)</title>
     <meta name="author" content="JIHUN HONG">
     <meta name="keywords" content="">
 
     <link rel="icon" href="https://jihunhong.github.io/favicon.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jihunhong.github.io/categories/study/index.xml">
-    
 
     
-    <meta name="description" content="harry&#39;s blog">
-    <meta property="og:description" content="harry&#39;s blog">
+    <meta name="description" content="📖 JDBC ( Java Database Connectivity)">
+    <meta property="og:description" content="📖 JDBC ( Java Database Connectivity)">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Study">
-    <meta property="og:url" content="/categories/study/">
+    <meta property="og:title" content="JDBC ( Java Database Connectivity)">
+    <meta property="og:url" content="/05/12/jdbc-java-database-connectivity/">
     <meta property="og:site_name" content="harry&#39;s blog">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="harry&#39;s blog">
-    <meta name="twitter:description" content="harry&#39;s blog">
+    <meta name="twitter:description" content="📖 JDBC ( Java Database Connectivity)">
     
     
 
@@ -53,6 +55,8 @@
       <meta property="og:image" content="//www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
     
 
+    
+      <meta property="og:image" content="https://hostpresto.com/wp-content/uploads/2017/05/jdbc.jpg">
     
     
     
@@ -231,40 +235,26 @@ if (!doNotTrack) {
 </nav>
 
       
-        
 
-      
       <div id="main" data-behavior="1"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
+    <h1 class="post-title" itemprop="headline">
+      JDBC ( Java Database Connectivity)
+    </h1>
   
-
-
   
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
-          InputStream 과 OutputStream
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-04-28T21:14:32&#43;09:00">
+      <time itemprop="datePublished" datetime="2019-05-12T22:37:14&#43;09:00">
         
-  April 28, 2019
+  May 12, 2019
 
       </time>
     
@@ -272,295 +262,223 @@ if (!doNotTrack) {
   
   
     <span>in</span>
-    
-      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>, 
     
       <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>, 
     
-      <a class="category-link" href="https://jihunhong.github.io/categories/java">JAVA</a>
+      <a class="category-link" href="https://jihunhong.github.io/categories/java">Java</a>
     
   
 
   </div>
 
-    </div>
-    
-    <div class="postShorten-excerpt" itemprop="articleBody" style="    margin-top: 3px;">
-      <p>🌊 InputStream 과 OutputStream</p>
-      <p>
-        <a href="https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://seekcomau.corewebdna.net.au/web_images/blogs/214/1670/How%20to%20mine%20your%20network_940x485.jpg" style="border:1px solid #dadada; border-radius: 5px; "/>
-      </div>
-    </a>
-  
-</article>
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>📖 JDBC ( Java Database Connectivity)</p>
 
+<blockquote>
+<p>자바에서 데이터베이스에 접속 할 수 있도록 하는 데이터 접근 API</p>
+</blockquote>
+
+<p><br></p>
+
+<h2 id="자바와-데이터베이스의-연동">🔌 자바와 데이터베이스의 연동</h2>
+
+<ol>
+<li>드라이버 로딩 (JDBC Load)
+
+<ul>
+<li><a href="https://docs.oracle.com/javase/7/docs/api/java/lang/Class.html">Class.forName(&ldquo;드라이버 Path&rdquo;)</a>
+
+<ul>
+<li><code>Class</code> 클래스가 클래스의 정보(필드, 메서드 클래스의 종류)를 담는 메타 클래스이고
+JVM은 해당 클래스의 정보를 로드한다.
+<br>
+<br></li>
+</ul></li>
+</ul></li>
+<li>DB 연결 <a href="https://docs.oracle.com/javase/7/docs/api/java/sql/Connection.html">Connection</a>
+
+<ul>
+<li>DriverManager.getConnection(url, ID, PWD)
+
+<ul>
+<li>Connection 객체를 생성한후</li>
+<li>DriverManager에서 시스템 프로퍼티 &ldquo;jdbc.drivers&rdquo;에 참조된 드라이버 클래스를 로드한다.</li>
+<li>이후 Connection 객체에 할당
+<br>
+<br></li>
+</ul></li>
+</ul></li>
+
+<li><p>쿼리 생성 및 질의</p>
+
+<pre><code class="language-java">
+PreparedStatement psmt = null;
+psmt = conn.prepareStatement(&quot;SQL문&quot;);
+
+
+Statement stmt = null;
+stmt = conn.createStatement(&quot;SQL문&quot;);
+</code></pre>
+
+<p>✔️ <code>PreparedStatement</code>는 쿼리에 ?로 매개변수를 받아 실행 가능
+<br>
+<br></p></li>
+
+<li><p>쿼리 실행</p>
+
+<ul>
+<li>psmt.executeUpdate()
+
+<ul>
+<li><strong><code>INSERT</code> <code>UPDATE</code> <code>DELETE</code></strong> 같은 값을 받아오지 않는 쿼리문은 psmt.execute<strong>Update</strong>()로 실행</li>
+</ul></li>
+<li>psmt.executeQuery()
+
+<ul>
+<li><strong><code>SELECT</code></strong> 처럼 결과 테이블이 필요한 쿼리문은 쿼리 실행 이전에 <code>ResultSet</code>객체를 생성한후 psmt.execute<strong>Query</strong>()를 할당한다.
+<br>
+<br></li>
+</ul></li>
+</ul></li>
+
+<li><p>ResultSet 처리</p>
+
+<pre><code class="language-java">while(rs.next()) {
+    int i=1;
+    int id = rs.getInt(i++);
+    String name = rs.getString(i++);
+    String addr = rs.getString(i++);
+ }
+</code></pre></li>
+</ol>
+
+<p><br></p>
+
+<ol>
+<li><p>Close()</p>
+
+<pre><code class="language-java">if (rs!=null) {
+   try {
+      rs.close();
+   } catch (SQLException e) {
+   }
+}
+
+if(stmt!=null) {
+   try {
+      stmt.close();
+   } catch (SQLException e) {
+   }
+}
+
+if(conn!=null) {
+   try {
+      conn.close();
+   } catch (SQLException e) {
+   }
+}
+</code></pre>
+
+<p>✔️ Open한 객체들의 역순으로 close 시킨다.</p></li>
+</ol>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
             
               
-  
-    
-  
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/db/">DB</a>
 
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://jihunhong.github.io/04/28/%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">
-          소켓 프로그래밍
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-04-28T21:14:32&#43;09:00">
-        
-  April 28, 2019
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>, 
-    
-      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>
-    
-  
-
-  </div>
-
-    </div>
-    
-    <div class="postShorten-excerpt" itemprop="articleBody" style="    margin-top: 3px;">
-      <p>🌏 네트워크와 소켓 이해</p>
-      <p>
-        <a href="https://jihunhong.github.io/04/28/%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://jihunhong.github.io/04/28/%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://seekcomau.corewebdna.net.au/web_images/blogs/214/1670/How%20to%20mine%20your%20network_940x485.jpg" style="border:1px solid #dadada; border-radius: 5px; "/>
-      </div>
-    </a>
-  
-</article>
-
-            
+                  </div>
+                
               
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://jihunhong.github.io/02/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%82%BD%EC%A7%88%EA%B8%B0/">
-          데이터베이스 삽질기
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-02-21T05:49:32&#43;09:00">
-        
-  February 21, 2019
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>
-    
-  
-
-  </div>
-
-    </div>
-    
-    <div class="postShorten-excerpt" itemprop="articleBody" style="    margin-top: 3px;">
-      <p>데이터베이스 삽질기</p>
-      <p>
-        <a href="https://jihunhong.github.io/02/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%82%BD%EC%A7%88%EA%B8%B0/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://jihunhong.github.io/02/21/%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4-%EC%82%BD%EC%A7%88%EA%B8%B0/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="http://file.millky.com/public/files/origoni/common/JPAHibernate.jpg" style="border:1px solid #dadada; border-radius: 5px; "/>
-      </div>
-    </a>
-  
-</article>
-
             
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
               
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://jihunhong.github.io/01/22/organizing-containers-of-balls/">
-          Organizing Containers of Balls
-        </a>
-      </h1>
-      
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2019-01-22T07:32:11&#43;09:00">
-        
-  January 22, 2019
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>
-    
-  
-
-  </div>
-
-    </div>
-    
-    <div class="postShorten-excerpt" itemprop="articleBody" style="    margin-top: 3px;">
-      <p>해커랭크 문제 풀이</p>
-      <p>
-        <a href="https://jihunhong.github.io/01/22/organizing-containers-of-balls/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://jihunhong.github.io/01/22/organizing-containers-of-balls/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://amritchhetri.files.wordpress.com/2016/10/logo_wordmark-vertical-800x645.png?w=800" style="border:1px solid #dadada; border-radius: 5px; "/>
-      </div>
-    </a>
-  
-</article>
-
-            
+                <a class="post-action-btn btn btn--disabled">
               
-  
-    
-  
-
-
-  
-
-<article class="postShorten postShorten--thumbnailimg-left" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://jihunhong.github.io/12/23/picking-numbers/">
-          Picking Numbers
-        </a>
-      </h1>
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/11/%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-%ED%95%80pin%EB%B2%88%ED%98%B8%EA%B0%80-%EC%99%94%EB%8B%A4/" data-tooltip="애드센스 핀(PIN)번호가 왔다">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
       
-  <div class="postShorten-meta post-meta">
-    
-      <time itemprop="datePublished" datetime="2018-12-23T06:25:32&#43;09:00">
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
         
-  December 23, 2018
-
-      </time>
-    
-    
-  
-  
-    <span>in</span>
-    
-      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>
-    
-  
-
-  </div>
-
-    </div>
-    
-    <div class="postShorten-excerpt" itemprop="articleBody" style="    margin-top: 3px;">
-      <p>값 갱신을 이용한 문제풀이</p>
-      <p>
-        <a href="https://jihunhong.github.io/12/23/picking-numbers/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
-  
-    <a href="https://jihunhong.github.io/12/23/picking-numbers/">
-      <div class="postShorten-thumbnailimg">
-        <img alt="" itemprop="image" src="https://amritchhetri.files.wordpress.com/2016/10/logo_wordmark-vertical-800x645.png?w=800" style="border:1px solid #dadada; border-radius: 5px; "/>
-      </div>
-    </a>
-  
-</article>
-
-            
-            
-  <div class="pagination-bar">
-    <ul class="pagination">
-      
-        
-          <li class="pagination-prev">
-            <a class="btn btn--default btn--small" href="https://jihunhong.github.io/categories/study/page/2/">
-              <i class="fa fa-angle-left text-base icon-mr"></i>
-              <span>NEWER POSTS</span>
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/">
+              <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
         
-          <li class="pagination-next">
-            <a class="btn btn--default btn--small" href="https://jihunhong.github.io/categories/study/page/4/">
-              <span>OLDER POSTS</span>
-              <i class="fa fa-angle-right text-base icon-ml"></i>
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/">
+              <i class="fa fa-google-plus"></i>
             </a>
           </li>
         
       
-      <li class="pagination-number">page 3 of 5</li>
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
     </ul>
   </div>
 
 
-          </section>
-        
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 JIHUN HONG. All Rights Reserved
@@ -568,6 +486,102 @@ if (!doNotTrack) {
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/11/%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-%ED%95%80pin%EB%B2%88%ED%98%B8%EA%B0%80-%EC%99%94%EB%8B%A4/" data-tooltip="애드센스 핀(PIN)번호가 왔다">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F12%2Fjdbc-java-database-connectivity%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F12%2Fjdbc-java-database-connectivity%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F12%2Fjdbc-java-database-connectivity%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -833,6 +847,32 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/05\/12\/jdbc-java-database-connectivity\/';
+          
+            this.page.identifier = '\/05\/12\/jdbc-java-database-connectivity\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 

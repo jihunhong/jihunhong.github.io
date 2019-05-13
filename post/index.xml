@@ -6,10 +6,19 @@
     <description>Recent content in Posts on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 May 2019 12:13:42 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 12 May 2019 22:37:14 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JDBC ( Java Database Connectivity)</title>
+      <link>https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/</link>
+      <pubDate>Sun, 12 May 2019 22:37:14 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/12/jdbc-java-database-connectivity/</guid>
+      <description>&lt;p&gt;📖 JDBC ( Java Database Connectivity)&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>애드센스 핀(PIN)번호가 왔다</title>
