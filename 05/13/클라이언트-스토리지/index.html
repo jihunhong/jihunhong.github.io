@@ -460,6 +460,107 @@ myapp.css
 images/background.png
 // resource들
 </code></pre>
+
+<h3 id="캐시-업데이트">캐시 업데이트</h3>
+
+<blockquote>
+<p>캐시된 웹 애플리케이션은 모든 파일을 캐시에서 불러온다. 브라우저가 오프라인 상태일떄도 마찬가지로
+매니페스트 파일의 변경을 비동기적으로 확인할 것이다.</p>
+
+<p>브라우저는 캐시 수정 과정에서 다수의 이벤트를 발생시키며, 이벤트 핸들러를 등록할 수 있다.</p>
+</blockquote>
+
+<pre><code class="language-js">applicationCache.onupdateready = function(){
+        var reload = confirm(&quot;애플리케이션 새로고침이 필요합니다. 지금 새로고침 하겠습니까?&quot;);
+        if (reload)
+            location.reload();
+}
+</code></pre>
+
+<ul>
+<li><p>업데이트할것이 없는 상태</p>
+
+<ul>
+<li><code>noupdate</code></li>
+</ul></li>
+
+<li><p>업데이트할것이 있는 경우</p>
+
+<ul>
+<li><code>downloading</code> 이벤트가 발생하고 매니페스트를 참조하며 모든 파일들을 캐시</li>
+</ul></li>
+
+<li><p>새 애플리케이션을 처음 로드하는 경우</p>
+
+<ul>
+<li><code>downloading</code>과 <code>progress</code> 이벤트가 발생되며 다운로드 완료시 <code>updateready</code>가 아닌 <code>cached이벤트</code>가 발생</li>
+</ul></li>
+
+<li><p>브라우저가 오프라인 상태인 경우</p>
+
+<ul>
+<li>매니페스트를 확인할 수 없으므로 <code>error</code></li>
+</ul></li>
+
+<li><p>매니페스트를 찾을 수 없는 경우</p>
+
+<ul>
+<li><code>obsolete</code> 발생 후 애플리케이션을 캐시에서 삭제</li>
+</ul></li>
+</ul>
+
+<h3 id="캐시-상태">캐시 상태</h3>
+
+<ul>
+<li><code>UNCACHED</code>
+
+<ul>
+<li>manifest속성을 확인할 수 없음.</li>
+</ul></li>
+<li><code>IDLE</code>
+
+<ul>
+<li>최신버전으로 캐시된 상태</li>
+</ul></li>
+<li><code>CHECKING</code>
+
+<ul>
+<li>매니페스트 파일을 확인중인 상태</li>
+</ul></li>
+<li><code>DOWNLOADING</code>
+
+<ul>
+<li>파일들을 다운로드한 다음 캐시에 적용하는 중인 상태</li>
+</ul></li>
+<li><code>UPDATEREADY</code>
+
+<ul>
+<li>새버전을 다운로드하고 캐시한 상태</li>
+</ul></li>
+<li><code>OBSOLETE</code>
+
+<ul>
+<li>매니페스트가 없어서 애플리케이션 캐시는 삭제될 예정인 상태</li>
+</ul></li>
+</ul>
+
+<h3 id="캐시-메서드">캐시 메서드</h3>
+
+<ul>
+<li><p>update()</p>
+
+<ul>
+<li>애플리케이션의 새 버전을 확인하기 위한 캐시 업데이트 알고리즘을 명시적으로 호출한다.</li>
+</ul></li>
+
+<li><p>swapCache()</p>
+
+<ul>
+<li>브라우저가 이전 버전의 캐시를 폐기하고 앞으로의 요청들이 새 캐시를 가져올게 해준다.</li>
+</ul></li>
+</ul>
+
+<p>✔️ 상태값이 <code>UPDATEREADY</code> 이거나 <code>OBSOLETE</code> 일때만 의미가 있다.</p>
               
             </div>
           </div>
@@ -486,7 +587,7 @@ images/background.png
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/servlet-jsp/" data-tooltip="Servlet &amp; JSP">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/servlet-jsp-%E4%B8%8A/" data-tooltip=" Servlet &amp; JSP 上">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -572,7 +673,7 @@ images/background.png
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/servlet-jsp/" data-tooltip="Servlet &amp; JSP">
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/servlet-jsp-%E4%B8%8A/" data-tooltip=" Servlet &amp; JSP 上">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -711,8 +812,25 @@ images/background.png
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="https://jihunhong.github.io/05/13/servlet-jsp/">
-                <h3 class="media-heading">Servlet &amp; JSP</h3>
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/14/servlet-jsp-%E4%B8%8B/">
+                <h3 class="media-heading"> Servlet &amp; JSP 下</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  May 5, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>📄 Servlet &amp; JSP 下</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://jihunhong.github.io/05/13/servlet-jsp-%E4%B8%8A/">
+                <h3 class="media-heading"> Servlet &amp; JSP 上</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
@@ -861,23 +979,6 @@ images/background.png
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="https://jihunhong.github.io/05/06/%EB%A6%AC%EB%88%85%EC%8A%A4-%EC%A0%95%EB%A6%AC-2/">
-                <h3 class="media-heading">리눅스 정리 2</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  May 5, 2019
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>🌐네트워크 , 💻 Shell 스크립트</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -885,7 +986,7 @@ images/background.png
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         40 posts found
+         41 posts found
       </p>
     </div>
   </div>

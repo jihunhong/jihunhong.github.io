@@ -6,17 +6,26 @@
     <description>Recent content on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 13 May 2019 21:14:14 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 May 2019 21:18:24 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Servlet &amp; JSP</title>
-      <link>https://jihunhong.github.io/05/13/servlet-jsp/</link>
+      <title> Servlet &amp; JSP 下</title>
+      <link>https://jihunhong.github.io/05/14/servlet-jsp-%E4%B8%8B/</link>
+      <pubDate>Tue, 14 May 2019 21:18:24 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/14/servlet-jsp-%E4%B8%8B/</guid>
+      <description>&lt;p&gt;📄 Servlet &amp;amp; JSP 下&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title> Servlet &amp; JSP 上</title>
+      <link>https://jihunhong.github.io/05/13/servlet-jsp-%E4%B8%8A/</link>
       <pubDate>Mon, 13 May 2019 21:14:14 +0900</pubDate>
       
-      <guid>https://jihunhong.github.io/05/13/servlet-jsp/</guid>
+      <guid>https://jihunhong.github.io/05/13/servlet-jsp-%E4%B8%8A/</guid>
       <description>&lt;p&gt;📄 Servlet &amp;amp; JSP&lt;/p&gt;</description>
     </item>
     
