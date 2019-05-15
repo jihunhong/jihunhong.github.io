@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>memo on harry&#39;s blog</title>
+    <title>Memo on harry&#39;s blog</title>
     <link>https://jihunhong.github.io/categories/memo/</link>
-    <description>Recent content in memo on harry&#39;s blog</description>
+    <description>Recent content in Memo on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ko-KR</language>
     <lastBuildDate>Fri, 10 May 2019 08:57:34 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/categories/memo/index.xml" rel="self" type="application/rss+xml" />
