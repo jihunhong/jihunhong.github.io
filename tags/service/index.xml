@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Service on harry&#39;s blog</title>
+    <link>https://jihunhong.github.io/tags/service/</link>
+    <description>Recent content in Service on harry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Thu, 16 May 2019 21:19:37 +0900</lastBuildDate>
+    
+	<atom:link href="https://jihunhong.github.io/tags/service/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring Annotation 과 Service</title>
+      <link>https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/</link>
+      <pubDate>Thu, 16 May 2019 21:19:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/</guid>
+      <description>&lt;p&gt;🍃  Spring Basic&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,15 +6,60 @@
     <description>Recent content in Tags on harry&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Wed, 15 May 2019 20:24:37 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 16 May 2019 21:21:37 +0900</lastBuildDate>
     
 	<atom:link href="https://jihunhong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Cloud</title>
+      <link>https://jihunhong.github.io/tags/cloud/</link>
+      <pubDate>Thu, 16 May 2019 21:21:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Infrastructure</title>
+      <link>https://jihunhong.github.io/tags/infrastructure/</link>
+      <pubDate>Thu, 16 May 2019 21:21:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/infrastructure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>RAS</title>
+      <link>https://jihunhong.github.io/tags/ras/</link>
+      <pubDate>Thu, 16 May 2019 21:21:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/ras/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>https://jihunhong.github.io/tags/server/</link>
+      <pubDate>Thu, 16 May 2019 21:21:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Context</title>
+      <link>https://jihunhong.github.io/tags/context/</link>
+      <pubDate>Thu, 16 May 2019 21:19:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/context/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>JSP</title>
       <link>https://jihunhong.github.io/tags/jsp/</link>
-      <pubDate>Wed, 15 May 2019 20:24:37 +0900</pubDate>
+      <pubDate>Thu, 16 May 2019 21:19:37 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/tags/jsp/</guid>
       <description></description>
@@ -23,16 +68,25 @@
     <item>
       <title>Java</title>
       <link>https://jihunhong.github.io/tags/java/</link>
-      <pubDate>Wed, 15 May 2019 20:24:37 +0900</pubDate>
+      <pubDate>Thu, 16 May 2019 21:19:37 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>Service</title>
+      <link>https://jihunhong.github.io/tags/service/</link>
+      <pubDate>Thu, 16 May 2019 21:19:37 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/tags/service/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Servlet</title>
       <link>https://jihunhong.github.io/tags/servlet/</link>
-      <pubDate>Wed, 15 May 2019 20:24:37 +0900</pubDate>
+      <pubDate>Thu, 16 May 2019 21:19:37 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/tags/servlet/</guid>
       <description></description>
@@ -41,7 +95,7 @@
     <item>
       <title>Spring</title>
       <link>https://jihunhong.github.io/tags/spring/</link>
-      <pubDate>Wed, 15 May 2019 20:24:37 +0900</pubDate>
+      <pubDate>Thu, 16 May 2019 21:19:37 +0900</pubDate>
       
       <guid>https://jihunhong.github.io/tags/spring/</guid>
       <description></description>
