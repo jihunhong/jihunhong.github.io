@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.63.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="JIHUN HONG">
+<meta name="keywords" content="">
+<meta name="description" content="🌊 InputStream 과 OutputStream">
+
+
+<meta property="og:description" content="🌊 InputStream 과 OutputStream">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InputStream 과 OutputStream">
+<meta name="twitter:title" content="InputStream 과 OutputStream">
+<meta property="og:url" content="https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+<meta property="twitter:url" content="https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+<meta property="og:site_name" content="harry&#39;s blog">
+<meta property="og:description" content="🌊 InputStream 과 OutputStream">
+<meta name="twitter:description" content="🌊 InputStream 과 OutputStream">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-04-28T21:14:32">
+  
+  
+    <meta property="article:modified_time" content="2019-04-28T21:14:32">
+  
+  
+  
+    
+      <meta property="article:section" content="Study">
+    
+      <meta property="article:section" content="TIL">
+    
+      <meta property="article:section" content="JAVA">
+    
+  
+  
+    
+      <meta property="article:tag" content="Network">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://seekcomau.corewebdna.net.au/web_images/blogs/214/1670/How%20to%20mine%20your%20network_940x485.jpg">
+  <meta property="twitter:image" content="https://seekcomau.corewebdna.net.au/web_images/blogs/214/1670/How%20to%20mine%20your%20network_940x485.jpg">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+
+
+    <title>InputStream 과 OutputStream</title>
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      InputStream 과 OutputStream
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-04-28T21:14:32&#43;09:00">
+        
+  April 28, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>, 
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>, 
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/java">JAVA</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>🌊 InputStream 과 OutputStream</p>
+<blockquote>
+<p>단일 방향으로 흘러가는 데이터의 흐름을 표현하는것으로 <code>Stream</code>이라고한다.</p>
+<blockquote>
+<p>입력 스트림의 출발지 (키보드, 파일) 에서 출력 스트림의 도착지 (모니터, 파일, 프로그램) 의 관계를 띈다.</p>
+</blockquote>
+</blockquote>
+<p><img src="https://www.ntu.edu.sg/home/ehchua/programming/java/images/IO_LayeredInput.png" alt="enter image description here"></p>
+<h2 id="inputstream"><code>InputStream</code></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>descrption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>read()</td>
+<td>inputstream 으로부터 데이터의 byte를 읽어낸다</td>
+</tr>
+<tr>
+<td>read(byte b[])</td>
+<td>inputstream과 buffer 배열 <code>b</code> 로부터 byte로 이루어진 데이터를 읽어낸다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="outputstream"><code>OutputStream</code></h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>descrption</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>flush()</td>
+<td>버퍼에 잔류하는 모든 바이트를 출력한다</td>
+</tr>
+<tr>
+<td>write(byte b[])</td>
+<td>outputstream이 갖고있는 바이트 배열 b를 모두 write 한다</td>
+</tr>
+</tbody>
+</table>
+<h2 id="소켓-프로그래밍에서의-io-stream">소켓 프로그래밍에서의 I/O Stream</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">
+InputStream input  <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getInputStream</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+OutputStream output <span style="color:#f92672">=</span> socket<span style="color:#f92672">.</span><span style="color:#a6e22e">getOutputStream</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">while</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	<span style="color:#75715e">//5. 데이터 읽기
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">byte</span> buffer<span style="color:#f92672">[</span><span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>256<span style="color:#f92672">]</span><span style="color:#f92672">;</span>
+
+	<span style="color:#66d9ef">int</span> readByteCount <span style="color:#f92672">=</span> input<span style="color:#f92672">.</span><span style="color:#a6e22e">read</span><span style="color:#f92672">(</span>buffer<span style="color:#f92672">)</span><span style="color:#f92672">;</span><span style="color:#75715e">//blocking.
+</span><span style="color:#75715e"></span>
+	<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>readByteCount <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">// 클라이언트 정상종료 한 경우
+</span><span style="color:#75715e"></span>		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[server] closed by client.&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		<span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+	<span style="color:#f92672">}</span>
+
+	String data <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span>buffer<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> readByteCount<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+	System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[server] received &#34;</span> <span style="color:#f92672">+</span> data<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+	<span style="color:#75715e">//6. 데이터 쓰기
+</span><span style="color:#75715e"></span>	output<span style="color:#f92672">.</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span>data<span style="color:#f92672">.</span><span style="color:#a6e22e">getBytes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;utf-8&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+	<span style="color:#f92672">}</span>
+</code></pre></div><blockquote>
+<p>소켓 프로그래밍에서의 <code>IOStream</code>은 생성한 소켓으로부터 <code>accept()</code> 이후 연결이 되면
+각각의 <code>stream</code>객체를 얻게되고 <code>read/write</code> Method를 사용해 데이터 통신이 이루어진다.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/network/">Network</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/04/28/inetaddress-%ED%81%B4%EB%9E%98%EC%8A%A4/" data-tooltip="InetAddress 클래스">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/04/28/%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" data-tooltip="소켓 프로그래밍">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/04/28/inetaddress-%ED%81%B4%EB%9E%98%EC%8A%A4/" data-tooltip="InetAddress 클래스">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/04/28/%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" data-tooltip="소켓 프로그래밍">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/04/28/inputstream-%EA%B3%BC-outputstream/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F04%2F28%2Finputstream-%25EA%25B3%25BC-outputstream%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F04%2F28%2Finputstream-%25EA%25B3%25BC-outputstream%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F04%2F28%2Finputstream-%25EA%25B3%25BC-outputstream%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/04\/28\/inputstream-%EA%B3%BC-outputstream\/';
+          
+            this.page.identifier = '\/04\/28\/inputstream-%EA%B3%BC-outputstream\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

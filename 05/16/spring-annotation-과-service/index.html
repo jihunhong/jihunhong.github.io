@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.63.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="JIHUN HONG">
+<meta name="keywords" content="">
+<meta name="description" content="🍃  Spring Basic">
+
+
+<meta property="og:description" content="🍃  Spring Basic">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spring Annotation 과 Service">
+<meta name="twitter:title" content="Spring Annotation 과 Service">
+<meta property="og:url" content="https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+<meta property="twitter:url" content="https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+<meta property="og:site_name" content="harry&#39;s blog">
+<meta property="og:description" content="🍃  Spring Basic">
+<meta name="twitter:description" content="🍃  Spring Basic">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-05-16T21:19:37">
+  
+  
+    <meta property="article:modified_time" content="2019-05-16T21:19:37">
+  
+  
+  
+    
+      <meta property="article:section" content="TIL">
+    
+  
+  
+    
+      <meta property="article:tag" content="Java">
+    
+      <meta property="article:tag" content="Spring">
+    
+      <meta property="article:tag" content="Servlet">
+    
+      <meta property="article:tag" content="JSP">
+    
+      <meta property="article:tag" content="Service">
+    
+      <meta property="article:tag" content="Context">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://javatutorial.net/wp-content/uploads/2017/12/spring-featured-image.png">
+  <meta property="twitter:image" content="https://javatutorial.net/wp-content/uploads/2017/12/spring-featured-image.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+
+
+    <title>Spring Annotation 과 Service</title>
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Spring Annotation 과 Service
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-05-16T21:19:37&#43;09:00">
+        
+  May 16, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>🍃  Spring Basic</p>
+<h1 id="-spring-basic">🍃 Spring Basic</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#spring-basic">🍃 Spring Basic</a>
+<ul>
+<li><a href="#dispatcherservlet">📢 DispatcherServlet</a>
+<ul>
+<li><a href="#dispatcherservlet-%EB%8F%99%EC%9E%91-%EB%B0%A9%EC%8B%9D">💨 DispatcherServlet  동작 방식</a></li>
+</ul>
+</li>
+<li><a href="#%EC%A3%BC%EC%9A%94-annotation">🔖 주요 Annotation</a>
+<ul>
+<li><a href="#responsebody">@ResponseBody</a></li>
+<li><a href="#requestmapping">@RequestMapping</a></li>
+<li><a href="#requestparam">@RequestParam</a></li>
+<li><a href="#autowired">@Autowired</a></li>
+<li><a href="#pathvariable">@PathVariable</a></li>
+<li><a href="#modelandview">@ModelAndView</a></li>
+</ul>
+</li>
+<li><a href="#listener">🎧Listener</a></li>
+<li><a href="#%EF%B8%8F-layered-architecture">🏛️ Layered Architecture</a></li>
+<li><a href="#service">📌 Service</a></li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="-dispatcherservlet">📢 DispatcherServlet</h2>
+<blockquote>
+<p>브라우저에서 보내는 요청을 가장 먼저 받는 Front Controller로써, request받은 요청을 HandlerMapping에게 질의한다.</p>
+</blockquote>
+<h3 id="-dispatcherservlet--동작-방식">💨 DispatcherServlet  동작 방식</h3>
+<p><img src="https://i.imgur.com/oDq5qlG.png" alt="99F8E4335A06F70930"></p>
+<ul>
+<li><strong>HandlerMapping</strong>
+<ul>
+<li><code>Map</code> 구조 처럼 key(url) : value(method name or Parameter)로 구성되어 있는 형태이다.</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>DispatcherServlet이 HandlerMapping에게 질의한 결과 찾아낸 URL이 <code>Controller에게</code> 전달되어</li>
+<li>전달된 Parameter에 해당하는 메서드의 실행과 함께</li>
+<li>Service계층에 정의되어있는 비즈니스 로직이 실행된다.</li>
+<li>이후 실행한 메서드의 컨트롤러에서 비즈니스 로직의 결과로 리턴된 <code>Model</code>객체와 뷰 이름과 함께 반환되고</li>
+<li><code>ViewResolver</code>가 응답할 View를 찾아내</li>
+<li>View객체에 요청을 전달하며 최종결과가 출력된다.</li>
+</ol>
+<h2 id="-주요-annotation">🔖 주요 Annotation</h2>
+<h3 id="responsebody">@ResponseBody</h3>
+<blockquote>
+<p>Annotation이 위치한 메서드에 View를 출력하는것이 아닌 return되는 자료형이 MessageConverter에 의해 변환되어 <strong>HTTP Response Body에 쓰여져 전송</strong>된다.</p>
+</blockquote>
+<blockquote>
+<p>Controller에서 View가 아닌 객체를 리턴해야 할 상황에서 (Ajax같은) <strong>메서드의 리턴 자료형을 지정</strong> 할때 쓰인다.</p>
+</blockquote>
+<h3 id="requestmapping">@RequestMapping</h3>
+<blockquote>
+<p>기본적으로 @RequestMapping(value=&quot;parameter&rdquo;, method.RequestMethod.<strong>(method_name)</strong>)의 형태를 띄는 Annotation이다.
+method를 지정할 경우 <code>value</code>프로퍼티 형식은 <strong>필수적</strong> 이다.
+복수의 urlMapping을 위해서는 value={&ldquo;parameter1&rdquo;, &ldquo;parameter2&rdquo;}로 나타낸다.</p>
+</blockquote>
+<h3 id="requestparam">@RequestParam</h3>
+<blockquote>
+<p>HttpServleRequest객체의 getParamter()와 비슷한 역할을 한다 특정 @RequestMapping로 실행된 메서드의 파라미터 유형을 <code>/url?key=value</code>처럼 지정할 수 있는 역할을 한다.</p>
+</blockquote>
+<h3 id="autowired">@Autowired</h3>
+<blockquote>
+<p>web.xml -&gt; &lt;context-param&gt; -&gt; <strong><code>&lt;context-annotation-config/&gt;</code></strong> 를 통해 Autowired Annotation을 사용한 클래스의 의존성을 낮춰 사용할 수 있게하는 역할을 한다</p>
+</blockquote>
+<h3 id="pathvariable">@PathVariable</h3>
+<p><code>@RequestParam</code>의 value값을 {param}으로 설정했을때의 값을 <code>@PathVariable</code>로 받아 메서드 매개변수로 선언한다</p>
+<h3 id="modelandview">@ModelAndView</h3>
+<blockquote>
+<p>뷰에서 Controller로의 객체 전달이 이루어져야 할때 메서드의 매개변수로 사용한다.</p>
+</blockquote>
+<h2 id="listener">🎧Listener</h2>
+<blockquote>
+<p>ContextLoaderListener를 상속받아 contextIntialized 함수에 루트 컨테이너를 web.xml에 입력한 경로의 설정을 이용해 빌드하도록하는 역할</p>
+</blockquote>
+<blockquote>
+<p>(예제에서는 /WEB-INF/applicationContext.xml를 토대로 스프링 컨테이너를 빌드하고 모든 서블릿이 공유하도록 했다.)</p>
+</blockquote>
+<h2 id="-layered-architecture">🏛️ Layered Architecture</h2>
+<p><img src="https://img.viralpatel.net/2010/10/spring3-hibernate-application-architecture.png" alt="enter image description here"></p>
+<h2 id="-service">📌 Service</h2>
+<blockquote>
+<p>스프링에서의 비즈니스 영역을 일반적으로 서비스라고 한다.
+비즈니스 계층은 컨트롤러와 DAO사이의 중복코드와 객체지향의 목적에 맞는 의존성을 유지하기 위해 사용하는 계층이다.</p>
+</blockquote>
+<pre><code>- DAO의 메서드 단위가 트랜잭션 단위가 된다.
+- DAO의 CRUD기능 이외에 페이징 구현시 Service계층을 이용하는것이 대표적이다.
+- applicationContext.xml에서 특정 패키지가 @Service를 사용하도록 설정할 수 있다.
+- ERD를 이용한 방식과 유저 스토리를 작성하는 것으로 비즈니스 로직을 설계하고 `Service계층을` 구현한다.
+</code></pre>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/java/">Java</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/spring/">Spring</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/servlet/">Servlet</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/jsp/">JSP</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/service/">Service</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/context/">Context</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/16/%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%EC%84%9C-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%9D%98-%EC%97%AD%ED%95%A0/" data-tooltip="웹서비스에서 인프라의 역할">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/15/spring-basic/" data-tooltip="Spring Basic">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/16/%EC%9B%B9%EC%84%9C%EB%B9%84%EC%8A%A4%EC%97%90%EC%84%9C-%EC%9D%B8%ED%94%84%EB%9D%BC%EC%9D%98-%EC%97%AD%ED%95%A0/" data-tooltip="웹서비스에서 인프라의 역할">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/15/spring-basic/" data-tooltip="Spring Basic">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/16/spring-annotation-%EA%B3%BC-service/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F16%2Fspring-annotation-%25EA%25B3%25BC-service%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F16%2Fspring-annotation-%25EA%25B3%25BC-service%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F16%2Fspring-annotation-%25EA%25B3%25BC-service%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/05\/16\/spring-annotation-%EA%B3%BC-service\/';
+          
+            this.page.identifier = '\/05\/16\/spring-annotation-%EA%B3%BC-service\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

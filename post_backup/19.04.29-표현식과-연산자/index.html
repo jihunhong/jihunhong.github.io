@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.63.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="JIHUN HONG">
+<meta name="keywords" content="">
+<meta name="description" content="📝 표현식과 연산자">
+
+
+<meta property="og:description" content="📝 표현식과 연산자">
+<meta property="og:type" content="article">
+<meta property="og:title" content="자바 스크립트 - 표현식과 연산자">
+<meta name="twitter:title" content="자바 스크립트 - 표현식과 연산자">
+<meta property="og:url" content="https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+<meta property="twitter:url" content="https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+<meta property="og:site_name" content="harry&#39;s blog">
+<meta property="og:description" content="📝 표현식과 연산자">
+<meta name="twitter:description" content="📝 표현식과 연산자">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-04-29T21:31:48">
+  
+  
+    <meta property="article:modified_time" content="2019-04-29T21:31:48">
+  
+  
+  
+    
+      <meta property="article:section" content="TIL">
+    
+  
+  
+    
+      <meta property="article:tag" content="JS">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*HP8l7LMMt7Sh5UoO1T-yLQ.png">
+  <meta property="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*HP8l7LMMt7Sh5UoO1T-yLQ.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+
+
+    <title>자바 스크립트 - 표현식과 연산자</title>
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      자바 스크립트 - 표현식과 연산자
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-04-29T21:31:48&#43;09:00">
+        
+  April 29, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>📝 표현식과 연산자</p>
+<h3 id="-기본-표현식">💲 기본 표현식</h3>
+<ul>
+<li><code>this</code></li>
+</ul>
+<blockquote>
+<p><code>this</code>는 상수가 아니고 프로그램 안에서 위치에 따라 각기 다른 값으로 평가된다.
+<code>this</code> 키워드는 객체 지향 프로그래밍에서 주로 사용된다.
+메서드의 본문 안에서 <code>this</code>는 메서드를 호출한 객체 자기 자신으로 여겨진다.</p>
+</blockquote>
+<h3 id="-함수-정의-표현식">💭 함수 정의 표현식</h3>
+<blockquote>
+<p>함수 정의 표현식은 &lsquo;함수 리터럴'이라 할 수 있다.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">square</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">x</span>){<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#a6e22e">x</span>;}
+</code></pre></div><h3 id="-연산자">📱 <code>연산자</code></h3>
+<table>
+<thead>
+<tr>
+<th>OP</th>
+<th>description</th>
+<th>return</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>delete</td>
+<td>프로퍼티를 제거</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>typeof</td>
+<td>피연산자의 타입</td>
+<td>문자열</td>
+</tr>
+<tr>
+<td>instanceof</td>
+<td>객체 타입 확인</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td>?:</td>
+<td>조건부 연산자</td>
+<td>타입 무방</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-비트-단위-연산자">🔍 비트 단위 연산자</h3>
+<ul>
+<li>
+<p>비트 단위 AND(&amp;)
+- 비교하는 비트가 모두 1이라면 1반환</p>
+</li>
+<li>
+<p>비트 단위 OR(|)
+- 비교하는 위치에 비트가 설정 되어 있으면 해당 비트로 설정</p>
+</li>
+<li>
+<p>비트 단위 XOR(^)
+- 비교하는 위치에 비트중 하나가 true이지만 둘다 true는 아닐때 결과가 true가 된다</p>
+</li>
+<li>
+<p>비트 단위 NOT(~)
+- 모든 비트를 반전</p>
+</li>
+<li>
+<p>레프트 시프트(&laquo;)
+- 지정한 수만큼 비트 전체를 왼쪽으로 이동</p>
+</li>
+<li>
+<p>라이트 시프트(&raquo;)
+- 지정한 수만큼 비트 전체를 오른쪽으로 이동</p>
+</li>
+<li>
+<p>0으로 채우면서 오른쪽으로 이동(&raquo;&gt;)
+- 지정한 수만큼 비트를 전부 오른쪽으로 이동 새로운 비트는 전부 0이 된다.</p>
+</li>
+</ul>
+<h3 id="-동치와-부등치-연산자">❓ 동치와 부등치 연산자</h3>
+<blockquote>
+<p>=(할당), ==(동치), ===(일치)</p>
+</blockquote>
+<ul>
+<li><code>=</code>		: 할당</li>
+<li><code>==</code>	: 동등한 관계, 타입변환을 시도한 후에 비교를 다시 하게된다</li>
+<li><code>===</code>	: 좀더 엄한 규칙, 같은 참조를 하고 있는 경우에 <code>true</code></li>
+</ul>
+<h3 id="in-연산자"><code>in</code> 연산자</h3>
+<blockquote>
+<p>좌변의 속성을 우변이 <strong>포함</strong> 하고 있을때.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">point</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>};
+<span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">point</span>						<span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;z&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">point</span>						<span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;toString&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">point</span>					<span style="color:#75715e">// true : 상속된 프로퍼티
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">7</span>,<span style="color:#ae81ff">8</span>,<span style="color:#ae81ff">9</span>];
+<span style="color:#e6db74">&#34;0&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>						<span style="color:#75715e">// true : 배열에 0번째 원소가 있어서
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">1</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>						<span style="color:#75715e">// true : 배열에 1번째 원소가 있기 때문에
+</span><span style="color:#75715e"></span><span style="color:#ae81ff">3</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">data</span>						<span style="color:#75715e">// false
+</span></code></pre></div><h3 id="instanceof-연산자"><code>instanceof</code> 연산자</h3>
+<blockquote>
+<p>피연산자의 상위클래스에 객체가 속하는지 판단</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">date</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Date();
+<span style="color:#a6e22e">d</span> <span style="color:#66d9ef">instanceof</span> Date;   <span style="color:#75715e">// true
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">d</span> <span style="color:#66d9ef">instanceof</span> Object; <span style="color:#75715e">// true
+</span></code></pre></div><h3 id="eval-평가-표현식"><code>eval()</code> 평가 표현식</h3>
+<blockquote>
+<p><strong>문자열</strong> (로 이루어진 코드) 을 자바스크립트로 해석하고 결과를 값으로 출력하는 기능</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">eval(<span style="color:#e6db74">&#34;3+2&#34;</span>)				<span style="color:#75715e">// =&gt; 5
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span>;
+eval(<span style="color:#e6db74">&#34;d = new Date;&#34;</span>);			<span style="color:#75715e">// =&gt; Mon Apr 29 2019 20:40:10 GMT+0900 (한국 표준시) {}
+</span></code></pre></div><pre><code>✔️ 전달 하려는 문자열이 독립된 스크립트로서 문제가 없을때 사용하는것에 유의하여야 한다.
+</code></pre><h3 id="-조건부-연산자"><code>?:</code> 조건부 연산자</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">x</span> <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">:</span> <span style="color:#f92672">-</span><span style="color:#a6e22e">x</span>             <span style="color:#75715e">// x의 절대 값을 구한다.
+</span></code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">greeting</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello &#34;</span> <span style="color:#f92672">+</span> (<span style="color:#a6e22e">username</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">username</span> <span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;there&#34;</span>);
+<span style="color:#75715e">// &#39;username&#39;이 true 즉, username에 변수가 정의되어 있지않다면 &#34;there&#34;를 사용하는것 문장
+</span></code></pre></div><h3 id="typeof-연산자"><code>typeof</code> 연산자</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">(<span style="color:#a6e22e">type</span> <span style="color:#a6e22e">value</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#34;string&#34;</span>) <span style="color:#f92672">?</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">value</span> <span style="color:#e6db74">&#34;&#39;&#34;</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">value</span>;
+<span style="color:#75715e">// value의 타입이 문자열이라면 문자열 &#39;value&#39;를 반환
+</span></code></pre></div><h1 id="heading"></h1>
+<h3 id="delete-연산자"><code>delete</code> 연산자</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">x</span><span style="color:#f92672">:</span><span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span><span style="color:#ae81ff">2</span>};
+<span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">x</span>;						<span style="color:#75715e">// return true
+</span><span style="color:#75715e"></span><span style="color:#e6db74">&#34;x&#34;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">o</span>;						<span style="color:#75715e">// false
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">array</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
+<span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">2</span>];
+<span style="color:#ae81ff">2</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">a</span>;							<span style="color:#75715e">// false
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">length</span>;						<span style="color:#75715e">// ✔️ 3 배열의 길이는 변하지 않는다.
+</span></code></pre></div>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/js/">JS</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.04.30-tcp-%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" data-tooltip="TCP 소켓 프로그래밍">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.04.28-inetaddress-%ED%81%B4%EB%9E%98%EC%8A%A4/" data-tooltip="InetAddress 클래스">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.04.30-tcp-%EC%86%8C%EC%BC%93-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D/" data-tooltip="TCP 소켓 프로그래밍">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.04.28-inetaddress-%ED%81%B4%EB%9E%98%EC%8A%A4/" data-tooltip="InetAddress 클래스">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.04.29-%25ED%2591%259C%25ED%2598%2584%25EC%258B%259D%25EA%25B3%25BC-%25EC%2597%25B0%25EC%2582%25B0%25EC%259E%2590%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.04.29-%25ED%2591%259C%25ED%2598%2584%25EC%258B%259D%25EA%25B3%25BC-%25EC%2597%25B0%25EC%2582%25B0%25EC%259E%2590%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.04.29-%25ED%2591%259C%25ED%2598%2584%25EC%258B%259D%25EA%25B3%25BC-%25EC%2597%25B0%25EC%2582%25B0%25EC%259E%2590%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/post_backup\/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90\/';
+          
+            this.page.identifier = '\/post_backup\/19.04.29-%ED%91%9C%ED%98%84%EC%8B%9D%EA%B3%BC-%EC%97%B0%EC%82%B0%EC%9E%90\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

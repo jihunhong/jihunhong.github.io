@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.63.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="JIHUN HONG">
+<meta name="keywords" content="">
+<meta name="description" content="💸 프리티어 기간을 지나서 요금이 청구됐을때">
+
+
+<meta property="og:description" content="💸 프리티어 기간을 지나서 요금이 청구됐을때">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AWS 프리티어 과금">
+<meta name="twitter:title" content="AWS 프리티어 과금">
+<meta property="og:url" content="https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+<meta property="twitter:url" content="https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+<meta property="og:site_name" content="harry&#39;s blog">
+<meta property="og:description" content="💸 프리티어 기간을 지나서 요금이 청구됐을때">
+<meta name="twitter:description" content="💸 프리티어 기간을 지나서 요금이 청구됐을때">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-05-10T08:57:34">
+  
+  
+    <meta property="article:modified_time" content="2019-05-10T08:57:34">
+  
+  
+  
+    
+      <meta property="article:section" content="memo">
+    
+  
+  
+    
+      <meta property="article:tag" content="AWS">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png">
+  <meta property="twitter:image" content="https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+
+
+    <title>AWS 프리티어 과금</title>
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      AWS 프리티어 과금
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-05-10T08:57:34&#43;09:00">
+        
+  May 10, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/memo">memo</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>💸 프리티어 기간을 지나서 요금이 청구됐을때</p>
+<!-- raw HTML omitted -->
+<p><img src="https://i.imgur.com/st5L44f.png" alt="free-tier">
+<!-- raw HTML omitted --></p>
+<p><code>AWS 프리티어</code>는 1년간 해당하는 서비스를 무료로 이용할 수 있게하는 모델이다.</p>
+<p><a href="https://github.com/jihunhong/dunpic">작년부터 만들고 진행한 프로젝트</a>를</p>
+<p>EC2와 RDS 프리티어를 이용해서 배포하고 있었는데</p>
+<p>지난달 <a href="https://jihunhong.github.io/04/09/%EC%B7%A8%EC%97%85%EC%9D%84-%ED%96%88%EB%8B%A4/">취업 후 시간이 별로없어</a> 서버관리에 신경을 못썼다.</p>
+<p>프리티어의 한도가 초과되어 과금이 발생하면 등록한 이메일로 Notification을 보내는 서비스를 사용중이어서</p>
+<p>메일을 받으면 서비스를 종료하려고 생각하던 와중에</p>
+<p>이번달 요금이 얼마나 청구됐나 체크해봤는데 매달 <a href="https://aws.amazon.com/ko/route53/">Route 53</a> 이용에 청구되던 액수보다 너무 많았다.</p>
+<p><img src="https://i.imgur.com/utD3VnD.png" alt="과금"></p>
+<p>1년이 지나간 시점에서 프리티어가 종료되었고 Notification의 서비스도 종료되었기 때문에</p>
+<p>이런 문제가 발생한것 같았다.</p>
+<p>내 경우는 메일을 받으면 서비스를 종료하려고 했었는데 이미 과금이 발생한 경우였는데</p>
+<p>프리티어 과금에 관한 내용을 검색해보니 1~2회?에 한에서 과금에 관한 조정이 가능하다는 말이 있어서</p>
+<p>번역기의 도움을받아 확인차 문의을 넣어봤다.</p>
+<blockquote>
+<p>The ec2 free tier and rds we used last month cost a lot.
+Did my free tier closed?
+<!-- raw HTML omitted -->I was using a notification service to check the free-tier quota, but I was embarrassed by the unexpected charge.
+<!-- raw HTML omitted -->I did not get the charge because I did not have money in the account I registered, but can you get rid of the charge?</p>
+</blockquote>
+<p>문의를 넣고 얼마 지나지 않아 답변을 받을 수 있었다.</p>
+<p>답변 내용을 요약해보면</p>
+<blockquote>
+<p>결제 조정을 준비하기위해 내 계정의 청구 금액을 모니터링한 후 더이상 과금되지 않는다면
+<!-- raw HTML omitted -->결제 조정에 관한 요청을 준비할것 이라는 답변이었다.</p>
+</blockquote>
+<p>이후 하루동안 모니터링이 이루어졌고 4월의 청구액에 더해 5월 9일까지의 청구금액도</p>
+<p>크레딧 사용을 통해 조정될 수 있었다.</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/aws/">AWS</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.10-java-oop/" data-tooltip="Java OOP">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.08-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC-subquery-/" data-tooltip="부질의 (SubQuery)">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.10-java-oop/" data-tooltip="Java OOP">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.08-%EC%84%9C%EB%B8%8C%EC%BF%BC%EB%A6%AC-subquery-/" data-tooltip="부질의 (SubQuery)">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.10-aws-%25ED%2594%2584%25EB%25A6%25AC%25ED%258B%25B0%25EC%2596%25B4-%25EC%2582%25AC%25EC%259A%25A9%25EC%25A4%2591-%25EA%25B3%25BC%25EA%25B8%2588%25EC%259D%25B4-%25EC%25B2%25AD%25EA%25B5%25AC%25EB%2590%2590%25EB%258B%25A4%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.10-aws-%25ED%2594%2584%25EB%25A6%25AC%25ED%258B%25B0%25EC%2596%25B4-%25EC%2582%25AC%25EC%259A%25A9%25EC%25A4%2591-%25EA%25B3%25BC%25EA%25B8%2588%25EC%259D%25B4-%25EC%25B2%25AD%25EA%25B5%25AC%25EB%2590%2590%25EB%258B%25A4%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.10-aws-%25ED%2594%2584%25EB%25A6%25AC%25ED%258B%25B0%25EC%2596%25B4-%25EC%2582%25AC%25EC%259A%25A9%25EC%25A4%2591-%25EA%25B3%25BC%25EA%25B8%2588%25EC%259D%25B4-%25EC%25B2%25AD%25EA%25B5%25AC%25EB%2590%2590%25EB%258B%25A4%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/post_backup\/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4\/';
+          
+            this.page.identifier = '\/post_backup\/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

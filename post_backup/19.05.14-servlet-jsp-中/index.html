@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.63.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="JIHUN HONG">
+<meta name="keywords" content="">
+<meta name="description" content="📄 Servlet &amp; JSP 中">
+
+
+<meta property="og:description" content="📄 Servlet &amp; JSP 中">
+<meta property="og:type" content="article">
+<meta property="og:title" content=" Servlet &amp; JSP 中">
+<meta name="twitter:title" content=" Servlet &amp; JSP 中">
+<meta property="og:url" content="https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+<meta property="twitter:url" content="https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+<meta property="og:site_name" content="harry&#39;s blog">
+<meta property="og:description" content="📄 Servlet &amp; JSP 中">
+<meta name="twitter:description" content="📄 Servlet &amp; JSP 中">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-05-14T21:18:24">
+  
+  
+    <meta property="article:modified_time" content="2019-05-14T21:18:24">
+  
+  
+  
+    
+      <meta property="article:section" content="TIL">
+    
+      <meta property="article:section" content="Java">
+    
+  
+  
+    
+      <meta property="article:tag" content="Servlet">
+    
+      <meta property="article:tag" content="JSP">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://cdn.journaldev.com/wp-content/uploads/2013/09/Servlet-JSP-Tutorial.png">
+  <meta property="twitter:image" content="https://cdn.journaldev.com/wp-content/uploads/2013/09/Servlet-JSP-Tutorial.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+
+
+    <title> Servlet &amp; JSP 中</title>
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+       Servlet &amp; JSP 中
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-05-14T21:18:24&#43;09:00">
+        
+  May 14, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>, 
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/java">Java</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>📄 Servlet &amp; JSP 中</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#servlet-jsp-%E4%B8%AD">📖 Servlet &amp; JSP 中</a>
+<ul>
+<li><a href="#servlet-jsp-%EC%98%88%EC%A0%9Chttpsgithubcomjihunhongmysite">📮 Servlet &amp; JSP 예제</a>
+<ul>
+<li><a href="#example">📝 Example</a>
+<ul>
+<li><a href="#%EB%A1%9C%EA%B7%B8%EC%9D%B8">🔑 로그인</a></li>
+<li><a href="#%ED%9A%8C%EC%9B%90-%EC%A0%95%EB%B3%B4%EC%88%98%EC%A0%95">🔧 회원 정보수정</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#session-request">🌐 Session / Request</a>
+* <a href="#request">📨 Request</a>
+* <a href="#session">📡 Session</a>
+<ul>
+<li><a href="#%EF%B8%8F-dispatcher-redirect">↪️ Dispatcher / Redirect</a>
+<ul>
+<li><a href="#dispatcher-forwardrequest-response">🔗 Dispatcher : forward(request, response)</a></li>
+<li><a href="#%EF%B8%8F-redirect-sendredirecturl">〽️ Redirect : sendRedirect(url)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h1 id="-servlet--jsp-中">📖 Servlet &amp; JSP 中</h1>
+<h2 id="-servlet--jsp-예제httpsgithubcomjihunhongmysite">📮 <a href="https://github.com/jihunhong/mysite">Servlet &amp; JSP 예제</a></h2>
+<p><img src="https://i.imgur.com/pwThhzK.png" alt="캡처"></p>
+<h3 id="-example">📝 Example</h3>
+<h4 id="-로그인">🔑 로그인</h4>
+<ol>
+<li>
+<p>사용자가 로그인 메뉴 클릭</p>
+</li>
+<li>
+<p>브라우저에서 <code>/context/user?a=loginform</code> request.</p>
+</li>
+<li>
+<p><code>user에</code> Mapping 되어있는 UserServlet의 doGet() 호출</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doGet</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException<span style="color:#f92672">,</span> IOException <span style="color:#f92672">{</span>
+
+        String actionName <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        Action action <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserActionFactory<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getAction</span><span style="color:#f92672">(</span>actionName<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        action<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>a의 매개변수로 쓰여진 loginform을 actionName이라는 String객체로 받아</p>
+</li>
+<li>
+<p>UserActionFactory에서 해당하는 Action 실행</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;login&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>actionName<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      action <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> LoginAction<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>Email과 Password를 <code>&lt;form action=&quot;path&quot;&gt;</code>으로 전달 받아 UserDao의 get메서드를 통해 일치하는 <code>authUser</code> 객체 생성</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">,</span> ServletException <span style="color:#f92672">{</span>
+  String email <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;email&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+  String password <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+  UserVo authUser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserDao<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>email<span style="color:#f92672">,</span> password<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+  <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>authUser <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    request<span style="color:#f92672">.</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;result&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;fail&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    WebUtil<span style="color:#f92672">.</span><span style="color:#a6e22e">forward</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/WEB-INF/views/user/loginform.jsp&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+
+<span style="color:#75715e">//		로그인처리
+</span><span style="color:#75715e"></span>  HttpSession session <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+  session<span style="color:#f92672">.</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;authUser&#34;</span><span style="color:#f92672">,</span> authUser<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+  WebUtil<span style="color:#f92672">.</span><span style="color:#a6e22e">redirect</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">,</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getContextPath</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/main&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>앞에서 생성한 <code>authUser</code>를 session에 세팅하고</p>
+</li>
+<li>
+<p>메인 페이지로 Redirect.</p>
+</li>
+</ol>
+<!-- raw HTML omitted -->
+<h4 id="-회원-정보수정">🔧 회원 정보수정</h4>
+<ol>
+<li>
+<p>로그인 후 <strong>세션이 살아있는 상태에서</strong> 사용자가 정보수정 링크 클릭</p>
+</li>
+<li>
+<p>브라우저에서 <code>/user?a=updateform</code> request.</p>
+</li>
+<li>
+<p><code>user에</code> Mapping 되어있는 UserServlet의 doGet() 호출</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doGet</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException<span style="color:#f92672">,</span> IOException <span style="color:#f92672">{</span>
+
+    String actionName <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;a&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    Action action <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserActionFactory<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getAction</span><span style="color:#f92672">(</span>actionName<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    action<span style="color:#f92672">.</span><span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>a의 매개변수로 쓰여진 loginform을 actionName이라는 String객체로 받아</p>
+</li>
+<li>
+<p>UserActionFactory에서 해당하는 Action 실행</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-Java" data-lang="Java"><span style="color:#f92672">}</span><span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;updateform&#34;</span><span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>actionName<span style="color:#f92672">)</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            action <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UpdateformAction<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p>로그인 되어 저장상태의 세션을 가져오고 로그인되어있는 아이디의 키값 추출, 키값으로 찾은 <strong>User를 authUser세션으로 새로 저장</strong></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">execute</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">,</span> ServletException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 접근제어
+</span><span style="color:#75715e"></span>        HttpSession session <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>session <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">|</span><span style="color:#f92672">|</span> session<span style="color:#f92672">.</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;authUser&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            WebUtil<span style="color:#f92672">.</span><span style="color:#a6e22e">redirect</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">,</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getContextPath</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">+</span><span style="color:#e6db74">&#34;/main&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        UserVo authUser <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>UserVo<span style="color:#f92672">)</span>session<span style="color:#f92672">.</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;authUser&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>authUser <span style="color:#f92672">=</span><span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            WebUtil<span style="color:#f92672">.</span><span style="color:#a6e22e">redirect</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">,</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getContextPath</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+            <span style="color:#66d9ef">return</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+
+        Long userNo <span style="color:#f92672">=</span> authUser<span style="color:#f92672">.</span><span style="color:#a6e22e">getNo</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+        UserVo userVo <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> UserDao<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>userNo<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+
+        request<span style="color:#f92672">.</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;userVo&#34;</span><span style="color:#f92672">,</span> userVo<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+        session<span style="color:#f92672">.</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;authUser&#34;</span><span style="color:#f92672">,</span> authUser<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+
+        WebUtil<span style="color:#f92672">.</span><span style="color:#a6e22e">forward</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/WEB-INF/views/user/updateform.jsp&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div></li>
+<li>
+<p><code>updateform.jsp</code> 에서 <code>&lt;form action=&quot;/?a=update&quot;&gt;</code>으로 전달 받아 <code>UserServlet</code>에서 다시 <code>UpdateAction</code>까지 폼값 전달</p>
+</li>
+<li>
+<p>UserDao.update(vo)를 통해 update 쿼리를 실행 후</p>
+<blockquote>
+<p><strong>String sql = &ldquo;update user set name=?, email=?, password=?, gender=? where no=?&quot;;</strong></p>
+</blockquote>
+</li>
+<li>
+<p>변경된 닉네임이 표시되도록 변경된 User정보를 세션에 다시 실어 메인 페이지로 Redirect.</p>
+</li>
+</ol>
+<p><strong>❗ URL 요청 -&gt; Servlet -&gt; ActionFactory -&gt; 판별된 Action() 실행 -&gt; <code>Redirect</code> OR  <code>forward</code></strong></p>
+<h2 id="-session--request">🌐 Session / Request</h2>
+<h4 id="-request">📨 Request</h4>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.getParamter(name)</td>
+<td>name에 저장되어있는 <strong>문자열</strong> 반환</td>
+</tr>
+<tr>
+<td>.getContextPath()</td>
+<td><strong>프로젝트</strong> Path</td>
+</tr>
+</tbody>
+</table>
+<h4 id="-session">📡 Session</h4>
+<blockquote>
+<p>서버쪽에 상태 유지를 위한 정보를 저장하는것</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.getAttribute(String name)</td>
+<td>name에 저장되어있는 <strong>Object</strong> 타입으로 반환 없을 경우 NULL</td>
+</tr>
+<tr>
+<td>.setAttribute(String key , Object value)</td>
+<td>name인 속성에 value 오브젝트 할당</td>
+</tr>
+<tr>
+<td>.invalidate()</td>
+<td>현재 생성된 세션을 종료</td>
+</tr>
+</tbody>
+</table>
+<h3 id="-dispatcher--redirect">↪️ Dispatcher / Redirect</h3>
+<h4 id="-dispatcher--forwardrequest-response">🔗 Dispatcher : forward(request, response)</h4>
+<blockquote>
+<p>클라이언트가 요청하면서 전송한 데이터를 그대로 유지한다.
+(같은 request객체를 보존한 상태로 이동)</p>
+</blockquote>
+<h4 id="-redirect--sendredirecturl">〽️ Redirect : sendRedirect(url)</h4>
+<blockquote>
+<p>request객체가 없어지면서 <strong>새로운</strong> 페이지로 이동한다.</p>
+</blockquote>
+<p><strong>✔️ 매개변수로 어떤 객체가 올 수 있는지 생각하자</strong></p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/servlet/">Servlet</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/jsp/">JSP</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.15-servlet-jsp-%E4%B8%8B/" data-tooltip="Servlet &amp; JSP 下">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.13-servlet-jsp-%E4%B8%8A/" data-tooltip=" Servlet &amp; JSP 上">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.15-servlet-jsp-%E4%B8%8B/" data-tooltip="Servlet &amp; JSP 下">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.13-servlet-jsp-%E4%B8%8A/" data-tooltip=" Servlet &amp; JSP 上">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.05.14-servlet-jsp-%E4%B8%AD/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.14-servlet-jsp-%25E4%25B8%25AD%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.14-servlet-jsp-%25E4%25B8%25AD%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.14-servlet-jsp-%25E4%25B8%25AD%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/post_backup\/19.05.14-servlet-jsp-%E4%B8%AD\/';
+          
+            this.page.identifier = '\/post_backup\/19.05.14-servlet-jsp-%E4%B8%AD\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

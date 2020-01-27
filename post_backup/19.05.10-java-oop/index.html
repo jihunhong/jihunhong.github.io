@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.63.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="JIHUN HONG">
+<meta name="keywords" content="">
+<meta name="description" content="📖 Java OOP">
+
+
+<meta property="og:description" content="📖 Java OOP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java OOP">
+<meta name="twitter:title" content="Java OOP">
+<meta property="og:url" content="https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+<meta property="twitter:url" content="https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+<meta property="og:site_name" content="harry&#39;s blog">
+<meta property="og:description" content="📖 Java OOP">
+<meta name="twitter:description" content="📖 Java OOP">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-05-10T17:06:14">
+  
+  
+    <meta property="article:modified_time" content="2019-05-10T17:06:14">
+  
+  
+  
+    
+      <meta property="article:section" content="Study">
+    
+      <meta property="article:section" content="TIL">
+    
+  
+  
+    
+      <meta property="article:tag" content="Java">
+    
+      <meta property="article:tag" content="OOP">
+    
+      <meta property="article:tag" content="SODID">
+    
+      <meta property="article:tag" content="Hash">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.janbasktraining.com/blog/wp-content/uploads/2018/05/What-is-Opp.jpg">
+  <meta property="twitter:image" content="https://www.janbasktraining.com/blog/wp-content/uploads/2018/05/What-is-Opp.jpg">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+
+
+    <title>Java OOP</title>
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Java OOP
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-05-10T17:06:14&#43;09:00">
+        
+  May 10, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/study">Study</a>, 
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>📖 Java OOP</p>
+<h1 id="-java-oop">📖 Java OOP</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#java-oop">📖 Java OOP</a>
+* <a href="#%ED%98%84%EC%8B%A4%EC%9D%84-%EA%B7%B8%EB%8C%80%EB%A1%9C-%EC%98%AE%EA%B8%B4%EB%8B%A4">현실을 그대로 옮긴다</a>
+* <a href="#%EF%B8%8F-%EC%9E%AC%EC%82%AC%EC%9A%A9%ED%95%9C%EB%8B%A4%EB%8A%94-%EC%9D%98%EB%AF%B8">♻️ 재사용한다는 의미</a>
+* <a href="#%EC%9D%BC%EB%B0%98%ED%99%94%EC%99%80-%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4">일반화와 추상 클래스</a>
+* <a href="#referencing-%ED%95%B4%EC%84%9C-%EB%B6%80%EB%AA%A8%EA%B0%9D%EC%B2%B4%EC%B6%94%EC%83%81-%ED%81%B4%EB%9E%98%EC%8A%A4%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0">Referencing 해서 부모객체(추상 클래스)를 사용하기</a>
+<ul>
+<li><a href="#solid-by-limkyhttpslimkydevtistorycom77">⭐ SOLID by 📔 Limky</a>
+<ul>
+<li><a href="#srp-single-responsibility-principle-%EB%8B%A8%EC%9D%BC-%EC%B1%85%EC%9E%84-%EC%9B%90%EC%B9%99">SRP (Single Responsibility Principle) 단일 책임 원칙</a></li>
+<li><a href="#ocp-open-closed-principle-%EA%B0%9C%EB%B0%A9-%ED%8F%90%EC%87%84-%EC%9B%90%EC%B9%99">OCP (Open Closed Principle) 개방 폐쇄 원칙</a></li>
+<li><a href="#lsp-liskov-substitution-principle-%EB%A6%AC%EC%8A%A4%EC%BD%94%ED%94%84-%EC%B9%98%ED%99%98-%EC%9B%90%EC%B9%99">LSP (Liskov Substitution Principle) 리스코프 치환 원칙</a></li>
+<li><a href="#isp-interface-segregation-principle-%EC%9D%B8%ED%84%B0%ED%8E%98%EC%9D%B4%EC%8A%A4-%EB%B6%84%EB%A6%AC-%EC%9B%90%EC%B9%99">ISP (Interface Segregation Principle) 인터페이스 분리 원칙</a></li>
+<li><a href="#dip-dependency-inversion-principle-%EC%9D%98%EC%A1%B4-%EC%97%AD%EC%A0%84-%EC%9B%90%EC%B9%99">DIP (Dependency Inversion Principle) 의존 역전 원칙</a></li>
+</ul>
+</li>
+<li><a href="#%EA%B0%9D%EC%B2%B4-reflection">🔍 객체 Reflection</a>
+<ul>
+<li><a href="#%EF%B8%8F%E2%83%A3-hashing">#️⃣ HASHING</a></li>
+</ul>
+</li>
+<li><a href="#hashcode-%EC%99%80-equals">📌 Hashcode() 와 Equals()</a></li>
+<li><a href="#equals"><code>=</code> equals</a>
+<ul>
+<li><a href="#%EC%99%9C-hashcode%EB%A5%BC-equals%EC%99%80-%EA%B0%99%EC%9D%B4-%EC%98%A4%EB%B2%84%EB%9D%BC%EC%9D%B4%EB%93%9C-%ED%95%B4%EC%95%BC%EB%90%98%EB%8A%94%EC%A7%80">❓ 왜 hashcode를 equals와 같이 오버라이드 해야되는지</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="현실을-그대로-옮긴다">현실을 그대로 옮긴다</h3>
+<p>현실의 객체들이 가지고 있는 <code>속성</code>과 <code>기능</code>들 중에서 중요한 것들만 남기고 불필요한 것은 없애게 된다. 이러한 과정을 “추상화 한다.” 라고 말한다.</p>
+<h3 id="-재사용한다는-의미">♻️ 재사용한다는 의미</h3>
+<p>클래스를 다시 사용하는것이 아니라 추상화를 통해 확장시키는것의 의미이다</p>
+<h3 id="일반화와-추상-클래스">일반화와 추상 클래스</h3>
+<blockquote>
+<p>인스턴스가 될 수 없는 클래스를 &ldquo;추상 클래스&quot;라고 한다.</p>
+</blockquote>
+<blockquote>
+<p>추상 클래스 : 상속을 통해 확장하는 개념의 클래스로 어떤것에 관한 공통적인 기능, 속성을 담고있어 &ldquo;일반화&quot;된 것이다.</p>
+</blockquote>
+<h4 id="referencing-해서-부모객체추상-클래스를-사용하기">Referencing 해서 부모객체(추상 클래스)를 사용하기</h4>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Car c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Bus<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><blockquote>
+<p>객체생성시의 유연하고, 확장성 있는 객체를 만들수 있다는 장점</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Car c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Bus<span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+c<span style="color:#f92672">.</span><span style="color:#a6e22e">달리다</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+c<span style="color:#f92672">.</span><span style="color:#a6e22e">안내방송하다</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>   <span style="color:#75715e">// 불가
+</span><span style="color:#75715e"></span>c<span style="color:#f92672">.</span><span style="color:#a6e22e">주차</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>          <span style="color:#75715e">// 오버라이드
+</span></code></pre></div><!-- raw HTML omitted -->
+<h2 id="-solid-by--limkyhttpslimkydevtistorycom77">⭐ SOLID by 📔 <a href="https://limkydev.tistory.com/77">Limky</a></h2>
+<blockquote>
+<p>자기 자신 클래스 안에 응집도는 내부적으로 높이고, 타 클래스들 간 결합도는 낮추는 High Cohesion - Loose Coupling 원칙을 객체 지향의 관점에서 도입한 것이다.</p>
+</blockquote>
+<p><strong>✔️ 다시말해 응집도가 높은 각 모듈을 재사용함으로써, 수정을 최소화하여 유지보수를 용이하기 위함이다.</strong></p>
+<h3 id="srp-single-responsibility-principle-단일-책임-원칙">SRP (Single Responsibility Principle) 단일 책임 원칙</h3>
+<blockquote>
+<p>하나의 클래스안에 많은 속성을 넣지말고, 필요한 클래스의 역할과 목적에 맞는 속성과 메서드들을 추려 <strong>하나의 클래스들로 각각 만들어야 한다.</strong></p>
+</blockquote>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>❌ Father harry = new Son();
+- 해리라는 이름의 아들이 아버지의 행동을한다.
+⭕ Animal mickey = new Rat();
+- 미키라는 이름의 쥐가 동물의 행동을 한다.</p>
+<p>✔️ 클래스의타입 이름 = new 하위클래스();로 기억하자.</p>
+<!-- raw HTML omitted -->
+<h3 id="isp-interface-segregation-principle-인터페이스-분리-원칙">ISP (Interface Segregation Principle) 인터페이스 분리 원칙</h3>
+<blockquote>
+<p>SRP와 같은 원인에 대한 다른 해결책을 제시한다.
+이미 만들어진 여러개의 속성과 메서드를 <strong><code>인터페이스</code></strong> 를 통해 필터링하여 상황에 맞게 사용한다는 방식</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>✔️ 의미적으로 <strong><code>OCP 개방 폐쇄 원칙</code></strong> 과 유사하다.</p>
+<!-- raw HTML omitted -->
+<h2 id="-객체-reflection">🔍 객체 Reflection</h2>
+<blockquote>
+<p>클래스의 내부정보를 조회하거나 조작하는 기법</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<h3 id="-hashing">#️⃣ HASHING</h3>
+<blockquote>
+<p>text, address, 객체내의 int, string, boolean값들을  <code>int값</code>으로 만든것.</p>
+</blockquote>
+<ul>
+<li><strong>검색을 빨리하기위해서</strong> 사용한다</li>
+<li><strong>중복될수있다</strong></li>
+<li>데이터 자체가 같은지 비교하고 같다면 데이터의 내용이 같은지를 다시 비교하는식으로 검색</li>
+</ul>
+<h2 id="-hashcode-와-equals">📌 Hashcode() 와 Equals()</h2>
+<h2 id="-equals"><code>=</code> equals</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Point p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Point<span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 20<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+Point p2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Point<span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 20<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+Point p3 <span style="color:#f92672">=</span> p2<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">// == : 두객체의 동일성
+</span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>p1 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> p2<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>p2 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> p3<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">//equals : 두 객체의 동질성 비교한다. (내용비교)
+</span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>p1<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>p2<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>     
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>p2<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>p3<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><p>✔️ String을 <code>equals()</code> 메서드로 비교할때, <code>String 문자열</code>끼리 비교되는 반면
+✔️ <strong><code>Point객체</code>는 Override가 안되어있기 때문에 == 로 비교되어 false를 반환한다.</strong></p>
+<h3 id="-왜-hashcode를-equals와-같이-오버라이드-해야되는지">❓ 왜 hashcode를 equals와 같이 오버라이드 해야되는지</h3>
+<blockquote>
+<p><code>hashmap</code>, <code>hashset</code>같은 자료구조들의 비교 과정에서
+성능이 떨어지는 문제 때문에 hashcode를 구현해서 같이 쓴다.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Set<span style="color:#f92672">&lt;</span>Point<span style="color:#f92672">&gt;</span> set <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>Point<span style="color:#f92672">&gt;</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+Point p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Point<span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 20<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>p1<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+Point p2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Point<span style="color:#f92672">(</span>100<span style="color:#f92672">,</span> 200<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>p2<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+Point p3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Point<span style="color:#f92672">(</span>10<span style="color:#f92672">,</span> 20<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+set<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>p3<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">for</span><span style="color:#f92672">(</span>Point p <span style="color:#f92672">:</span> set<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+	System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>p<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><pre><code class="language-console" data-lang="console">Point [x=100, y=200]
+Point [x=10, y=20]
+
+hashcode()가 Override 되어있을경우 두개만 출력된다
+</code></pre><pre><code class="language-console" data-lang="console">Point [x=100, y=200]
+Point [x=10, y=20]
+Point [x=100, y=200]
+
+equals만 있다면 세개가 모두 출력
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		String str2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> String<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str1 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> str2<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str1<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>str2<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str1<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">+</span> str2<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+		System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">identityHashCode</span><span style="color:#f92672">(</span>str1<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span><span style="color:#f92672">+</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">identityHashCode</span><span style="color:#f92672">(</span>str2<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><pre><code class="language-console" data-lang="console">false
+true
+64578 : 64578       //이미 Override되어있기 때문
+366712642 : 1829164700
+</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String str3 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">;</span>
+String str4 <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;ABC&#34;</span><span style="color:#f92672">;</span>
+
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str3 <span style="color:#f92672">=</span><span style="color:#f92672">=</span> str4<span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str3<span style="color:#f92672">.</span><span style="color:#a6e22e">equals</span><span style="color:#f92672">(</span>str4<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>str3<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">+</span> str4<span style="color:#f92672">.</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">(</span><span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">identityHashCode</span><span style="color:#f92672">(</span>str3<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span><span style="color:#f92672">+</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">identityHashCode</span><span style="color:#f92672">(</span>str4<span style="color:#f92672">)</span><span style="color:#f92672">)</span><span style="color:#f92672">;</span>
+</code></pre></div><pre><code class="language-console" data-lang="console">true
+true
+64578 : 64578
+2018699554 : 2018699554
+
+//모두 같은 객체이다.
+</code></pre><blockquote>
+<p>String str3 = &ldquo;ABC&rdquo;; 의 과정에서는 ABC라는 string의 hashcode값을 메모리에 저장한다.</p>
+</blockquote>
+<blockquote>
+<p>이후 String str4 = &ldquo;ABC&rdquo;; 의 step에서는 같은객체가 있는지 확인한뒤 있다면 같은 객체를 참조하도록 한다.</p>
+</blockquote>
+<blockquote>
+<p>위와같은 과정은 변수선언을 Literal로 하는 방법이 변수를 재사용하여 사용하기 때문에 유용하다는 점을 시사한다.</p>
+</blockquote>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/java/">Java</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/oop/">OOP</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/sodid/">SODID</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/hash/">Hash</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.11-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-%ED%95%80pin%EB%B2%88%ED%98%B8%EA%B0%80-%EC%99%94%EB%8B%A4/" data-tooltip="애드센스 핀(PIN)번호가 왔다">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/" data-tooltip="AWS 프리티어 과금">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.11-%EC%95%A0%EB%93%9C%EC%84%BC%EC%8A%A4-%ED%95%80pin%EB%B2%88%ED%98%B8%EA%B0%80-%EC%99%94%EB%8B%A4/" data-tooltip="애드센스 핀(PIN)번호가 왔다">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/post_backup/19.05.10-aws-%ED%94%84%EB%A6%AC%ED%8B%B0%EC%96%B4-%EC%82%AC%EC%9A%A9%EC%A4%91-%EA%B3%BC%EA%B8%88%EC%9D%B4-%EC%B2%AD%EA%B5%AC%EB%90%90%EB%8B%A4/" data-tooltip="AWS 프리티어 과금">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/post_backup/19.05.10-java-oop/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.10-java-oop%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.10-java-oop%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2Fpost_backup%2F19.05.10-java-oop%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/post_backup\/19.05.10-java-oop\/';
+          
+            this.page.identifier = '\/post_backup\/19.05.10-java-oop\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.63.1 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="JIHUN HONG">
+<meta name="keywords" content="">
+<meta name="description" content="💾 20장 클라이언트 스토리지">
+
+
+<meta property="og:description" content="💾 20장 클라이언트 스토리지">
+<meta property="og:type" content="article">
+<meta property="og:title" content="클라이언트 스토리지">
+<meta name="twitter:title" content="클라이언트 스토리지">
+<meta property="og:url" content="https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+<meta property="twitter:url" content="https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+<meta property="og:site_name" content="harry&#39;s blog">
+<meta property="og:description" content="💾 20장 클라이언트 스토리지">
+<meta name="twitter:description" content="💾 20장 클라이언트 스토리지">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-05-13T21:08:14">
+  
+  
+    <meta property="article:modified_time" content="2019-05-13T21:08:14">
+  
+  
+  
+    
+      <meta property="article:section" content="TIL">
+    
+      <meta property="article:section" content="JS">
+    
+  
+  
+    
+      <meta property="article:tag" content="Storage">
+    
+      <meta property="article:tag" content="Client">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://cdn-images-1.medium.com/max/1600/1*HP8l7LMMt7Sh5UoO1T-yLQ.png">
+  <meta property="twitter:image" content="https://cdn-images-1.medium.com/max/1600/1*HP8l7LMMt7Sh5UoO1T-yLQ.png">
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=640">
+
+
+    <title>클라이언트 스토리지</title>
+
+    <link rel="icon" href="https://jihunhong.github.io/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+    
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    <link rel="stylesheet" href="//fonts.googleapis.com/earlyaccess/nanummyeongjo.css">
+    
+    
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    <link rel="stylesheet" href="https://jihunhong.github.io/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-121184936-3', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://jihunhong.github.io/">harry&#39;s blog</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://jihunhong.github.io/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://jihunhong.github.io/">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">JIHUN HONG</h4>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/jihunhong" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com/users/9044439/redgee" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://www.hackerrank.com/redgee49" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-code"></i>
+      
+      <span class="sidebar-button-desc">Hacker Rank</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://jihunhong.github.io/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      클라이언트 스토리지
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2019-05-13T21:08:14&#43;09:00">
+        
+  May 13, 2019
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/til">TIL</a>, 
+    
+      <a class="category-link" href="https://jihunhong.github.io/categories/js">JS</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>💾 20장 클라이언트 스토리지</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<ul>
+<li><a href="#%EC%9E%90%EB%B0%94-%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C">📖 자바 스크립트 완벽 가이드</a>
+<ul>
+<li><a href="#20%EC%9E%A5-%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80">💾 20장 클라이언트 스토리지</a>
+<ul>
+<li><a href="#%EC%9B%B9-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80">🌏 웹 스토리지</a></li>
+<li><a href="#%EC%BF%A0%ED%82%A4">🍪 쿠키</a></li>
+<li><a href="#ie-user-data">🌐 IE User Data</a></li>
+<li><a href="#%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%9B%B9-%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98">📴 오프라인 웹 애플리케이션</a></li>
+<li><a href="#%EC%9B%B9-%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%B2%A0%EC%9D%B4%EC%8A%A4">💻 웹 데이터베이스</a></li>
+<li><a href="#%ED%8C%8C%EC%9D%BC%EC%8B%9C%EC%8A%A4%ED%85%9C-api">📁 파일시스템 API</a></li>
+</ul>
+</li>
+<li><a href="#%EB%A1%9C%EC%BB%AC-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EC%99%80-%EC%84%B8%EC%85%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80">로컬 스토리지와 세션 스토리지</a>
+<ul>
+<li><a href="#%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%83%9D%EB%AA%85%EC%A3%BC%EA%B8%B0%EC%99%80-%EB%B2%94%EC%9C%84">스토리지 생명주기와 범위</a></li>
+</ul>
+</li>
+<li><a href="#%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-api">스토리지 API</a></li>
+<li><a href="#%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%EC%9D%B4%EB%B2%A4%ED%8A%B8">⚡ 스토리지 이벤트</a></li>
+<li><a href="#%EC%BF%A0%ED%82%A4-1">🍪 쿠키</a>
+<ul>
+<li><a href="#%EC%BF%A0%ED%82%A4-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0">쿠키 저장하기</a></li>
+<li><a href="#%EC%BF%A0%ED%82%A4%EA%B0%92-%EC%9D%BD%EA%B8%B0">쿠키값 읽기</a></li>
+</ul>
+</li>
+<li><a href="#%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80%EC%99%80-%EC%98%A4%ED%94%84%EB%9D%BC%EC%9D%B8-%EC%9B%B9%EC%95%B1">애플리케이션 스토리지와 오프라인 웹앱</a>
+<ul>
+<li><a href="#%EC%95%A0%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98-%EC%BA%90%EC%8B%9C-manifest">애플리케이션 캐시 MANIFEST</a></li>
+<li><a href="#%EC%BA%90%EC%8B%9C-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8">캐시 업데이트</a></li>
+<li><a href="#%EC%BA%90%EC%8B%9C-%EC%83%81%ED%83%9C">캐시 상태</a></li>
+<li><a href="#%EC%BA%90%EC%8B%9C-%EB%A9%94%EC%84%9C%EB%93%9C">캐시 메서드</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h1 id="-자바-스크립트-완벽-가이드">📖 자바 스크립트 완벽 가이드</h1>
+<h2 id="-20장-클라이언트-스토리지">💾 20장 클라이언트 스토리지</h2>
+<h3 id="-웹-스토리지">🌏 웹 스토리지</h3>
+<blockquote>
+<p>문자열 키와 값을 대응시킨 연관 배열인 로컬 스토리지와 세션 스토리지 객체로 구성되어 있다.
+사용하기 쉽고 너무 크지않은 대용량 데이터를 저장하기에 적합하다.</p>
+</blockquote>
+<h3 id="-쿠키">🍪 쿠키</h3>
+<blockquote>
+<p>서버측에서 스크립팅 가능하도록 설계된 오래된 클라이언트 스토리지 메커니즘이다.
+적은양의 텍스트 데이터르 저장할 경우에만 적절하다.
+쿠키는 클라이언트에서 사용하더라도 HTTP 요청 시 항상 서버로 전송된다.</p>
+</blockquote>
+<p>###🌐 IE User Data</p>
+<blockquote>
+<p>IE 5 이후 버전부터 구현된 전용 클라이언트 스토리지 메커니즘</p>
+</blockquote>
+<p>###📴 오프라인 웹 애플리케이션</p>
+<blockquote>
+<p>HTML5에서 해당 페이지의 리소스를 캐시할 수 있게 해주는것
+스트로지의 개념보다는 데이터 그 자체를 의미한다.</p>
+</blockquote>
+<h3 id="-웹-데이터베이스">💻 웹 데이터베이스</h3>
+<blockquote>
+<p>사파리, 크롬, 오페라에서 SQL데이터 베이스를 위한 클라리언트 API (표준화는 실패했다.)</p>
+</blockquote>
+<h3 id="-파일시스템-api">📁 파일시스템 API</h3>
+<blockquote>
+<p>XMLHttpRequest를 통해 선택할 파일을 업로드 할 수 있게 해주는 File객체를 지원하게되어 만든것.</p>
+</blockquote>
+<h2 id="로컬-스토리지와-세션-스토리지">로컬 스토리지와 세션 스토리지</h2>
+<blockquote>
+<p>두 객체 모두 Window객체의 프로퍼티가 정의되어있다.
+두 객체는 데이터를 얼마나 오래 보관할지 결정하는 생명주기와 접근 가능 대상을 지정하는
+범위에서 차이가 있다.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">x</span>); <span style="color:#75715e">// 데이터를 가져올때는 형변환후 해석해야한다.
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">lastRead</span> <span style="color:#f92672">=</span> (<span style="color:#66d9ef">new</span> Date()).<span style="color:#a6e22e">toUTCString</span>();
+
+<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">data</span>); <span style="color:#75715e">//인코딩하여 저장후
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">data</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">data</span>); <span style="color:#75715e">//디코딩해서 가져온다.
+</span></code></pre></div><h3 id="스토리지-생명주기와-범위">스토리지 생명주기와 범위</h3>
+<blockquote>
+<p>로컬 스토리지의 데이터는 만료 기한이 없고 범위는 문서의 출처(URL)에 한정된다.
+세션 스토리지의 데이터는 최상위 창이나 해당 스크립트를 실행하는 브라우저의 탭과 생명주기가 같다.
+세션 스토리지의 범위는 개별 창에 기반을 둔 범위를 갖는다.</p>
+</blockquote>
+<h2 id="스토리지-api">스토리지 API</h2>
+<table>
+<thead>
+<tr>
+<th>method</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getItem()</td>
+<td>값 저장</td>
+</tr>
+<tr>
+<td>setItem()</td>
+<td>값 가져오기</td>
+</tr>
+<tr>
+<td>removeItem()</td>
+<td>값 삭제</td>
+</tr>
+<tr>
+<td>clear()</td>
+<td>저장된 모든값 제거</td>
+</tr>
+</tbody>
+</table>
+<p><strong>✔️ length는 프로퍼티로 존재한다.</strong></p>
+<h2 id="-스토리지-이벤트">⚡ 스토리지 이벤트</h2>
+<blockquote>
+<p>스토리지에 저장된 데이터가 변경될 때마다, 브라우저는 이 데이터를 사용하는 다른 Window객체에
+스토리지 이벤트를 발생시킨다.</p>
+</blockquote>
+<ul>
+<li>key : 설정되거나 삭제된 데이터의 이름 또는 키이다.</li>
+<li>newValue : 특정 스토리지 데이터의 새로운 값 또는 remoteIte()이 호출됬을때 null을 저장한다.</li>
+<li>oldValue : 변경되었거나 삭제된 데이터가 가지고 있던 본래 값을 저장한다.</li>
+<li>url : 스크립트가 포함된 문서의 URL</li>
+</ul>
+<h2 id="-쿠키-1">🍪 쿠키</h2>
+<blockquote>
+<p>쿠키 데이터는 웹브라우저와 서버 사이에서 자동으로 전송되므로, 서버 측 스크립트는 클라이언트에서
+저장한 쿠키의 값을 읽거나 쓸 수 있다.</p>
+</blockquote>
+<p><strong>❗ 쿠키는 어떤 종류의 암호화 기법도 사용하지 않기 때문에 정보 전달시 보호받지 못한다.</strong></p>
+<ul>
+<li>
+<p>쿠키는 메서드가 존재하지 않으며 Document객체의 cookie 프로퍼티를 통해 조작한다.</p>
+</li>
+<li>
+<p>각 쿠키별로 생명주기와 범위는 개별 지정 할 수 있다. <code>max-age</code> ( 기본적으로는 일시적이다. )</p>
+</li>
+<li>
+<p>도메인의 depth를 지정( 경로를 지정 ) 함으로써 쿠키를 공유 할 수 있다.</p>
+</li>
+</ul>
+<h3 id="쿠키-저장하기">쿠키 저장하기</h3>
+<blockquote>
+<p>일시적인 쿠키를 만드려면 cookie프로퍼티를 문자열 형식으로 설정하자.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">document.<span style="color:#a6e22e">cookie</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;version=&#34;</span> <span style="color:#f92672">+</span> encodeURIComponent(document.<span style="color:#a6e22e">lastModified</span>);
+</code></pre></div><ul>
+<li>name</li>
+<li>max-age</li>
+<li>path</li>
+<li>domain</li>
+<li>secure</li>
+</ul>
+<h3 id="쿠키값-읽기">쿠키값 읽기</h3>
+<blockquote>
+<p>보통 개별 이름=값 쌍을 분리해 낼 수 있도록 split() 메서드를 사용해야 할것이다.
+값을 추출한 후 해당 값을 해석하기 위해 decodeURIComponent()에 전달후 JSON.parse()를 사용해
+객체로 변환한다.</p>
+</blockquote>
+<h2 id="애플리케이션-스토리지와-오프라인-웹앱">애플리케이션 스토리지와 오프라인 웹앱</h2>
+<blockquote>
+<p>애플리케이션 캐시 기능의 추가로 HTML과 CSS JS IMG 등의 파일 자체를 저장하는것이 가능해졌다.
+애플리케이션이 설치되면 자체적으로 제거하거나 사용자가 직접 지우기 전까지 남아있게 된다.</p>
+</blockquote>
+<blockquote>
+<p>오프라인 웹앱은 애플리케이션 캐시에 설치된 것으로 동작하고 로컬 스토리지를 사용해 데이터를
+저장한 다음, 온라인 상태가 되면 저장된 데이터를 서버로 전송하여 동기화하는 방식으로 동작한다.</p>
+</blockquote>
+<h3 id="애플리케이션-캐시-manifest">애플리케이션 캐시 MANIFEST</h3>
+<blockquote>
+<p>요청할 URL들의 목록을 담고 있는 매니페스트 파일을 생성한 후 <!-- raw HTML omitted --> 태그에 manifest속성을 설정하여
+HTML페이지와 연결해준다.</p>
+</blockquote>
+<ul>
+<li>MANIFEST의 구성</li>
+</ul>
+<pre><code>CACHE MANIFEST
+
+myapp.HTML
+myapp.js
+myapp.css
+images/background.png
+// resource들
+</code></pre><h3 id="캐시-업데이트">캐시 업데이트</h3>
+<blockquote>
+<p>캐시된 웹 애플리케이션은 모든 파일을 캐시에서 불러온다. 브라우저가 오프라인 상태일떄도 마찬가지로
+매니페스트 파일의 변경을 비동기적으로 확인할 것이다.</p>
+</blockquote>
+<blockquote>
+<p>브라우저는 캐시 수정 과정에서 다수의 이벤트를 발생시키며, 이벤트 핸들러를 등록할 수 있다.</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">applicationCache</span>.<span style="color:#a6e22e">onupdateready</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(){
+		<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">reload</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">confirm</span>(<span style="color:#e6db74">&#34;애플리케이션 새로고침이 필요합니다. 지금 새로고침 하겠습니까?&#34;</span>);
+		<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">reload</span>)
+			<span style="color:#a6e22e">location</span>.<span style="color:#a6e22e">reload</span>();
+}
+</code></pre></div><ul>
+<li>
+<p>업데이트할것이 없는 상태</p>
+<ul>
+<li><code>noupdate</code></li>
+</ul>
+</li>
+<li>
+<p>업데이트할것이 있는 경우</p>
+<ul>
+<li><code>downloading</code> 이벤트가 발생하고 매니페스트를 참조하며 모든 파일들을 캐시</li>
+</ul>
+</li>
+<li>
+<p>새 애플리케이션을 처음 로드하는 경우</p>
+<ul>
+<li><code>downloading</code>과 <code>progress</code> 이벤트가 발생되며 다운로드 완료시 <code>updateready</code>가 아닌 <code>cached이벤트</code>가 발생</li>
+</ul>
+</li>
+<li>
+<p>브라우저가 오프라인 상태인 경우</p>
+<ul>
+<li>매니페스트를 확인할 수 없으므로 <code>error</code></li>
+</ul>
+</li>
+<li>
+<p>매니페스트를 찾을 수 없는 경우</p>
+<ul>
+<li><code>obsolete</code> 발생 후 애플리케이션을 캐시에서 삭제</li>
+</ul>
+</li>
+</ul>
+<h3 id="캐시-상태">캐시 상태</h3>
+<ul>
+<li><code>UNCACHED</code>
+<ul>
+<li>manifest속성을 확인할 수 없음.</li>
+</ul>
+</li>
+<li><code>IDLE</code>
+<ul>
+<li>최신버전으로 캐시된 상태</li>
+</ul>
+</li>
+<li><code>CHECKING</code>
+<ul>
+<li>매니페스트 파일을 확인중인 상태</li>
+</ul>
+</li>
+<li><code>DOWNLOADING</code>
+<ul>
+<li>파일들을 다운로드한 다음 캐시에 적용하는 중인 상태</li>
+</ul>
+</li>
+<li><code>UPDATEREADY</code>
+<ul>
+<li>새버전을 다운로드하고 캐시한 상태</li>
+</ul>
+</li>
+<li><code>OBSOLETE</code>
+<ul>
+<li>매니페스트가 없어서 애플리케이션 캐시는 삭제될 예정인 상태</li>
+</ul>
+</li>
+</ul>
+<h3 id="캐시-메서드">캐시 메서드</h3>
+<ul>
+<li>
+<p>update()</p>
+<ul>
+<li>애플리케이션의 새 버전을 확인하기 위한 캐시 업데이트 알고리즘을 명시적으로 호출한다.</li>
+</ul>
+</li>
+<li>
+<p>swapCache()</p>
+<ul>
+<li>브라우저가 이전 버전의 캐시를 폐기하고 앞으로의 요청들이 새 캐시를 가져올게 해준다.</li>
+</ul>
+</li>
+</ul>
+<p>✔️ 상태값이 <code>UPDATEREADY</code> 이거나 <code>OBSOLETE</code> 일때만 의미가 있다.</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/storage/">Storage</a>
+
+  <a class="tag tag--primary tag--small" href="https://jihunhong.github.io/tags/client/">Client</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/servlet-jsp-%E4%B8%8A/" data-tooltip=" Servlet &amp; JSP 上">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/%EC%BA%90%EC%8B%9C%EC%99%80-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/" data-tooltip="캐시와 스토리지">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread">
+  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2020 JIHUN HONG. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/servlet-jsp-%E4%B8%8A/" data-tooltip=" Servlet &amp; JSP 上">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://jihunhong.github.io/05/13/%EC%BA%90%EC%8B%9C%EC%99%80-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/" data-tooltip="캐시와 스토리지">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=https://jihunhong.github.io/05/13/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80/">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fjihunhong.github.io%2F05%2F13%2F%25ED%2581%25B4%25EB%259D%25BC%25EC%259D%25B4%25EC%2596%25B8%25ED%258A%25B8-%25EC%258A%25A4%25ED%2586%25A0%25EB%25A6%25AC%25EC%25A7%2580%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fjihunhong.github.io%2F05%2F13%2F%25ED%2581%25B4%25EB%259D%25BC%25EC%259D%25B4%25EC%2596%25B8%25ED%258A%25B8-%25EC%258A%25A4%25ED%2586%25A0%25EB%25A6%25AC%25EC%25A7%2580%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=https%3A%2F%2Fjihunhong.github.io%2F05%2F13%2F%25ED%2581%25B4%25EB%259D%25BC%25EC%259D%25B4%25EC%2596%25B8%25ED%258A%25B8-%25EC%258A%25A4%25ED%2586%25A0%25EB%25A6%25AC%25EC%25A7%2580%2F">
+          <i class="fa fa-google-plus"></i><span>Share on Google&#43;</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/1195e5a46b27d50fe7234f2e57a8a24c?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">JIHUN HONG</h4>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        <strong>Junior</strong>  Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://jihunhong.github.io/images/bg.png');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://jihunhong.github.io/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+  
+    <script src="https://jihunhong.github.io/js/myscript.js"></script>
+  
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/jihunhong.github.io\/05\/13\/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80\/';
+          
+            this.page.identifier = '\/05\/13\/%ED%81%B4%EB%9D%BC%EC%9D%B4%EC%96%B8%ED%8A%B8-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'harrys-blog-1';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
