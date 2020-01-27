@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Static Resource on harry&#39;s blog</title>
+    <link>https://jihunhong.github.io/tags/static-resource/</link>
+    <description>Recent content in Static Resource on harry&#39;s blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Apr 2018 06:03:58 +0900</lastBuildDate>
+    
+	<atom:link href="https://jihunhong.github.io/tags/static-resource/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Static Resource의 내용이 변하지 않는 경우.</title>
+      <link>https://jihunhong.github.io/04/07/static-resource%EC%9D%98-%EB%82%B4%EC%9A%A9%EC%9D%B4-%EB%B3%80%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EA%B2%BD%EC%9A%B0./</link>
+      <pubDate>Sat, 07 Apr 2018 06:03:58 +0900</pubDate>
+      
+      <guid>https://jihunhong.github.io/04/07/static-resource%EC%9D%98-%EB%82%B4%EC%9A%A9%EC%9D%B4-%EB%B3%80%ED%95%98%EC%A7%80-%EC%95%8A%EB%8A%94-%EA%B2%BD%EC%9A%B0./</guid>
+      <description>&lt;p&gt;The content of the Static Resource does not change. ( CSS, IMG, ETC &amp;hellip; )&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
